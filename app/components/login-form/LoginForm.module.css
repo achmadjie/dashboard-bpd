@@ -1,0 +1,66 @@
+.login_container {
+  /* padding: 10rem; */
+  background-color: #fbfaf4;
+}
+
+.email_container,
+.password_container,
+.submit_container {
+  position: relative;
+  width: fit-content;
+  height: fit-content;
+}
+
+.email_box,
+.password_box,
+.submit_button {
+  width: 18rem;
+  height: 2.5rem;
+  padding-left: 1.25rem;
+  border-radius: 0.625rem;
+  background: #eaf0f7;
+  border: none;
+  font-size: 0.9rem;
+}
+
+.email_box::placeholder,
+.password_box::placeholder {
+  color: #4f555a;
+  font-size: 0.8rem;
+}
+
+.password_box::placeholder {
+  font-size: 2.1rem;
+}
+
+/* .email_box:active{
+	border: none;
+	stroke: none;
+} */
+
+.delete_icon,
+.eyes_icon {
+  position: absolute;
+  top: 30%;
+  right: 7%;
+  width: 1.15rem;
+  height: auto;
+}
+
+.forget_password_text {
+  color: #c7c7c7;
+  font-size: 0.6rem;
+  letter-spacing: 0.0875rem;
+  margin: 0.5rem 0 1.5rem 11rem;
+}
+
+.submit_button {
+  border-radius: 0.625rem;
+  background: #4461f2;
+  box-shadow: 0px 12px 21px 4px rgba(68, 97, 242, 0.15);
+  font-weight: 700;
+  letter-spacing: 0.10688rem;
+  color: #fff;
+  padding-left: 0;
+  font-size: 0.8rem;
+}
