@@ -1,0 +1,65 @@
+.login_section {
+  border-radius: 2.1875rem;
+  background: linear-gradient(
+    118deg,
+    rgba(161, 195, 245, 0.5) -38.16%,
+    rgba(25, 150, 254, 0.5) 127.78%
+  );
+  padding: 25px 27px;
+  /* margin: 10px; */
+  width: 100vw;
+  height: auto;
+}
+
+.login_container {
+  background-color: #fbfaf4;
+  filter: drop-shadow(0px 0px 0px rgba(0, 19, 51, 0.1))
+    drop-shadow(0px 2px 5px rgba(0, 19, 51, 0.1))
+    drop-shadow(0px 9px 9px rgba(0, 19, 51, 0.09))
+    drop-shadow(0px 21px 13px rgba(0, 19, 51, 0.05))
+    drop-shadow(0px 38px 15px rgba(0, 19, 51, 0.01))
+    drop-shadow(0px 59px 17px rgba(0, 19, 51, 0));
+  border-radius: 2.1875rem;
+  /* padding: 1.1rem; */
+}
+
+.main_logo {
+	width: 15%;
+	padding: 20px 0 0 20px
+}
+
+.login_main_section {
+  margin-top: 20px;
+  gap: 1rem;
+}
+
+.dirjen_bpd_logo {
+  width: 18rem;
+  height: auto;
+}
+
+.login_heading {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.login_paragraf {
+  /* width: 20%; */
+  padding: 0 40%;
+  height: auto;
+  text-align: center;
+  color: #979ca5;
+  font-size: 0.7rem;
+
+  margin-top: 20px;
+  line-height: 18px;
+}
+
+.peruri_logo_container{
+	margin-top: 134px;
+	padding-bottom: 20px;
+}
+
+.peruri_logo{
+	width: 10%;
+}
