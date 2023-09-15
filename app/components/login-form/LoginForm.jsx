@@ -37,7 +37,7 @@ function LoginForm() {
     >
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className={`container-fluid p-0 d-flex flex-column align-items-center gap-2`}
+        className={`container-fluid p-0 d-flex flex-column align-items-center gap-3`}
       >
         <div className={`${styles.email_container}`}>
           <input
