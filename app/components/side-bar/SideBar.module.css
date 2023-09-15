@@ -1,0 +1,138 @@
+.sidebar_container {
+  /* padding: 30px; */
+  background-color: #a5c8ff;
+  gap: 13.5rem;
+}
+
+.logo_menu_container{
+	width: fit-content;
+}
+
+.logo_welcome_container{
+	width: fit-content;
+}
+
+.logo {
+  width: 2.5rem;
+}
+
+.linmas_title {
+  font-weight: bolder;
+  font-size: 1.1rem;
+}
+
+.arrow_icon {
+  font-size: 1.2rem;
+  /* margin-bottom: 2px; */
+}
+
+.logo_dropdown_container {
+  width: fit-content;
+}
+
+.linmas_dropdown_container {
+  cursor: pointer;
+  user-select: none;
+  padding: 0;
+}
+
+.dropdown_containter {
+  top: 30px;
+  left: 80px;
+}
+
+.dropdown_containter ul {
+  /* width: 50%; */
+  /* display: none; */
+
+  background-color: #121212;
+  color: #e2f2ff;
+  border-radius: 15px;
+  padding: 10px 5px;
+}
+
+.dropdown_containter li {
+  padding: 5px 0 3px 10px;
+  /* margin: 10px; */
+  width: 120px;
+  /* margin-bottom: 5px; */
+  border-radius: 10px;
+  font-size: 0.7rem;
+}
+
+.dropdown_containter li:hover {
+  /* border: 2px solid #386BBC; */
+  background-color: #a5c8ff;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: 0.4s;
+  color: #121212;
+  /* padding: ; */
+}
+
+.welcome_avatar_container {
+  width: fit-content;
+  gap: 12px;
+}
+
+.avatar_container {
+  margin-left: 4px;
+}
+
+.avatar_image {
+  width: 2rem;
+  height: 2rem;
+}
+
+.welcome_text {
+  font-size: 0.5rem;
+}
+
+.village_text {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.main_menu_container {
+  width: fit-content;
+}
+
+.main_menu_item {
+  padding-left: 11px;
+  gap: 15px;
+  user-select: none;
+}
+
+.main_menu_item:focus{
+	color: #386BBC;
+}
+
+.menu_icon {
+  font-size: 1.2rem;
+}
+
+.menu_name {
+  font-size: 0.7rem;
+  display: flex;
+}
+
+.signout_logo_container{
+	width: fit-content;
+	padding-left: 12px;
+}
+
+.signout_container{
+	width: fit-content;
+}
+
+.signout_icon{
+	font-size: 1.5rem;
+}
+
+.signout_text{
+	font-size: .8rem;
+}
+
+.peruri_logo{
+	width: 7rem;
+}
