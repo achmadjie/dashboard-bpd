@@ -54,7 +54,9 @@ function SideBar() {
     <div
       className={`${styles.sidebar_container} ${pops.className} d-flex flex-column`}
     >
-      <div className={`${styles.logo_menu_container} d-flex flex-column justify-content-center gap-5`}>
+      <div
+        className={`${styles.logo_menu_container} d-flex flex-column justify-content-center gap-5`}
+      >
         <div
           className={`${styles.logo_welcome_container} d-flex flex-column justify-content-center gap-3`}
         >
