@@ -1,7 +1,8 @@
 .sidebar_container {
-  /* padding: 30px; */
-  background-color: #a5c8ff;
-  gap: 13.5rem;
+  width: 22vw;
+  height: 93.5vh;
+  /* gap: 10.2rem; */
+  z-index: 1;
 }
 
 .logo_menu_container{
@@ -13,16 +14,16 @@
 }
 
 .logo {
-  width: 2.5rem;
+  width: 3.5rem;
 }
 
 .linmas_title {
   font-weight: bolder;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
 }
 
 .arrow_icon {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   /* margin-bottom: 2px; */
 }
 
@@ -37,59 +38,60 @@
 }
 
 .dropdown_containter {
-  top: 30px;
-  left: 80px;
+  top: 35px;
+  left: 105px;
 }
 
 .dropdown_containter ul {
   /* width: 50%; */
   /* display: none; */
-
-  background-color: #121212;
-  color: #e2f2ff;
+  background-color: #e2f2ff;
+  color: #121212;
   border-radius: 15px;
-  padding: 10px 5px;
+  padding: 10px 3px;
+  border: 1px solid #121212;
 }
 
 .dropdown_containter li {
-  padding: 5px 0 3px 10px;
+  padding: 3px 0 3px 10px;
   /* margin: 10px; */
   width: 120px;
   /* margin-bottom: 5px; */
-  border-radius: 10px;
+  border-radius: 7px;
   font-size: 0.7rem;
+  /* border-bottom: .2px solid; */
 }
 
 .dropdown_containter li:hover {
   /* border: 2px solid #386BBC; */
   background-color: #a5c8ff;
-  border-radius: 10px;
-  font-weight: bold;
-  transition: 0.4s;
+  border-radius: 7px;
+  /* font-weight: bold; */
+  transition: .5s;
   color: #121212;
   /* padding: ; */
 }
 
 .welcome_avatar_container {
   width: fit-content;
-  gap: 12px;
+  gap: 15px;
 }
 
-.avatar_container {
+/* .avatar_container {
   margin-left: 4px;
-}
+} */
 
 .avatar_image {
-  width: 2rem;
-  height: 2rem;
+  width: 2.8rem;
+  height: 2.8rem;
 }
 
 .welcome_text {
-  font-size: 0.5rem;
+  font-size: .7rem;
 }
 
 .village_text {
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   font-weight: bold;
 }
 
@@ -98,27 +100,27 @@
 }
 
 .main_menu_item {
-  padding-left: 11px;
+  padding-left: 10px;
   gap: 15px;
   user-select: none;
 }
 
-.main_menu_item:focus{
+.main_menu_item:hover{
 	color: #386BBC;
 }
 
 .menu_icon {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 .menu_name {
-  font-size: 0.7rem;
+  font-size: .9rem;
   display: flex;
 }
 
 .signout_logo_container{
 	width: fit-content;
-	padding-left: 12px;
+	/* padding-left: 12px; */
 }
 
 .signout_container{
@@ -126,13 +128,13 @@
 }
 
 .signout_icon{
-	font-size: 1.5rem;
+	font-size: 1.8rem;
 }
 
 .signout_text{
-	font-size: .8rem;
+	font-size: 1rem;
 }
 
 .peruri_logo{
-	width: 7rem;
+	width: 8.5rem;
 }

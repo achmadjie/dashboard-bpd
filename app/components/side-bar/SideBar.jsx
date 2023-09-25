@@ -52,7 +52,7 @@ function SideBar() {
 
   return (
     <div
-      className={`${styles.sidebar_container} ${pops.className} d-flex flex-column`}
+      className={`${styles.sidebar_container} ${pops.className} d-flex flex-column justify-content-between`}
     >
       <div
         className={`${styles.logo_menu_container} d-flex flex-column justify-content-center gap-5`}
@@ -127,18 +127,18 @@ function SideBar() {
                 >
                   <menu.icon className={`${styles.menu_icon}`} />
                   <div className={`${styles.menu_name}`}>{menu.name}</div>
+                  {/* <menu.name /> */}
                 </div>
               );
             })}
           </>
         </div>
       </div>
-
       <div
         className={`${styles.signout_logo_container} d-flex flex-column justify-content-center gap-2`}
       >
         <Link
-          href="login"
+          href="/login"
           className={`${styles.signout_container} d-flex align-items-center gap-2`}
         >
           <PiSignOutLight className={`${styles.signout_icon}`}></PiSignOutLight>
