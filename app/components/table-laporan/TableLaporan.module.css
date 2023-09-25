@@ -1,0 +1,153 @@
+.table_laporan_container {
+  padding: 0;
+}
+
+.title_container h1 {
+  font-weight: 600;
+}
+
+.title_container span {
+  font-size: 0.8rem;
+  color: #979ca5;
+}
+
+.active_inactive_container {
+  text-align: end;
+  font-size: 0.8rem;
+}
+
+.active_text {
+  color: #25cb9b;
+}
+
+.inactive_text {
+  color: #f05153;
+}
+
+.add_export_button_container button {
+  font-size: 0.9rem;
+  display: flex;
+  /* flex-direction:row; */
+  width: fit-content;
+  height: fit-content;
+  align-items: center;
+  gap: 1.5rem;
+  border: 1px solid #7ac6ff;
+  padding: 8px 13px;
+  border-radius: 10px;
+}
+
+.export_button {
+  background-color: transparent;
+  color: #7ac6ff;
+}
+
+.add_button {
+  background-color: #7ac6ff;
+  color: #fff;
+  letter-spacing: 0.1rem;
+}
+
+.button_icon {
+  font-size: 1.2rem;
+}
+
+.search_bar {
+  width: 80vw;
+  height: 5vh;
+  border: 1px solid #eaf0f7;
+  border-radius: 15px;
+  padding: 0 15px;
+  color: #667085;
+  font-size: 0.8rem;
+}
+
+.search_bar_icon {
+  font-size: 1rem;
+  color: #667085;
+}
+
+.sort_bar,
+.filter_bar {
+  width: 17vw;
+  height: 5vh;
+  border: 1px solid #eaf0f7;
+  border-radius: 15px;
+  padding: 0 15px;
+  color: #667085;
+  font-size: 0.8rem;
+}
+
+.sort_bar_icon,
+.filter_bar_icon {
+  font-size: 1.7rem;
+  color: #667085;
+}
+
+.table_line {
+  margin: 10px 0;
+  color: #979ca5;
+  border-top: 1px solid;
+  opacity: 1;
+}
+
+.table_body,
+.table_header {
+  text-align: center;
+  /* border: 1px solid black; */
+  width: 100vw;
+  border-collapse: separate;
+  border-spacing: 1rem;
+}
+
+.data_table td {
+  /* text-align: center;
+  border: 1px solid black; */
+  /* width: 10px; */
+  border-collapse: separate;
+  border-spacing: 1rem;
+}
+
+.table_header {
+  color: #94918a;
+  font-weight: lighter;
+}
+
+.table_data_number {
+  width: 1%;
+  font-size: 1rem;
+}
+
+.table_data_report_title {
+  width: 15%;
+  font-size: .8rem;
+}
+
+.table_data_name {
+  width: 10%;
+  font-size: .8rem;
+}
+
+.table_data_type {
+  width: 2%;
+  font-size: 0.8rem;
+}
+
+.table_data_date {
+  width: 3%;
+  font-size: 0.8rem;
+}
+
+.table_data_attachment {
+  width: 1%;
+  font-size: 0.8rem;
+  background-color: #d8f6e8;
+  border-radius: 15px;
+  height: fit-content;
+  margin: 5%;
+}
+
+.table_data_action {
+  width: 2%;
+  font-size: 1.4rem;
+}
