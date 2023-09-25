@@ -1,0 +1,112 @@
+.tablelistlinmas_container{
+  height: fit-content;
+}
+
+.table_line{
+  margin: 0;
+  color: #979CA5;
+  border-top: 1px solid;
+  opacity: 1;
+}
+
+.title_text {
+  font-size: 1.5rem;
+  color: #121212;
+}
+
+.active_inactive_number_container span {
+  font-size: 0.8rem;
+}
+
+.active_text {
+  color: #25cb9b;
+}
+
+.inactive_text {
+  color: #f05153;
+}
+
+.see_more_container {
+  font-size: 1.1rem;
+  color: #386bbc;
+}
+
+.arrow_for_more {
+  font-size: 2rem;
+}
+
+.table_body,
+.table_header {
+  text-align: center;
+  /* border: 1px solid black; */
+  width: 100vw;
+  border-collapse: separate;
+  border-spacing: 1rem;
+}
+
+.data_table td {
+  text-align: center;
+  /* border: 1px solid black; */
+  /* width: 10px; */
+  border-collapse: separate;
+  border-spacing: 1rem;
+}
+
+.table_header {
+  color: #94918a;
+  font-weight: lighter;
+}
+
+.table_data_number {
+  width: 3%;
+  font-size: 1.1rem;
+}
+
+.table_data_name {
+  width: 10%;
+  font-size: 1.1rem;
+}
+
+.table_data_gender {
+  width: 2%;
+  font-size: 0.9rem;
+}
+
+.table_data_age {
+  width: 6%;
+  font-size: 0.9rem;
+}
+
+.table_data_numKTA {
+  width: 5%;
+  font-size: 0.9rem;
+}
+
+.table_data_numRTRW {
+  width: 7%;
+  font-size: 0.9rem;
+}
+
+.table_data_status {
+  width: 5%;
+  font-size: 0.8rem;
+}
+
+.table_data_action {
+  width: 5%;
+  font-size: 1.4rem;
+}
+
+/* .table_data_number {
+  width: 5%;
+} */
+
+.active_linmas {
+  background-color: #d8f6e8;
+  border-radius: 15px;
+}
+
+.non_active_linmas {
+  background-color: #f6d8d8;
+  border-radius: 15px;
+}
