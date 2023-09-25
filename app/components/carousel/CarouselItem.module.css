@@ -1,0 +1,40 @@
+.carousel_container {
+  background-color: transparent;
+  width: 100vw;
+  height: 100vh;
+  margin: auto;
+}
+
+.video_player{
+  border-radius: 15px;
+}
+.main_carousel_container {
+  margin-bottom: 1.5rem;
+  gap: 2rem;
+}
+
+.title_desc_carousel_container {
+  width: 33vw;
+  gap: 1rem;
+}
+
+.title_desc_carousel_container h3 {
+  font-weight: 800;
+  font-size: 1.7rem;
+  margin: 0;
+}
+
+.title_desc_carousel_container p {
+  font-size: .9rem;
+  margin: 0;
+}
+
+.register_village_btn {
+  border-radius: 0.7rem;
+  background: linear-gradient(276deg, #00a3ff 4.78%, #62f2cf 102.34%);
+  border: 0;
+  color: #ffffff;
+  padding: 7px 20px;
+  font-size: 0.6rem;
+  letter-spacing: 1px;
+}
