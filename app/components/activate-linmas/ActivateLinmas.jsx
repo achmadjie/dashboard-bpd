@@ -7,11 +7,6 @@ import { Poppins } from "next/font/google";
 
 import styles from "./ActivateLinmas.module.css";
 
-const pops = Poppins({
-  weight: ["400", "600"],
-  subsets: ["latin"],
-});
-
 function ActiveLinmas() {
   const [show, setShow] = useState(false);
 
@@ -34,16 +29,13 @@ function ActiveLinmas() {
   ];
   return (
     <>
-      <button
-        className={`${styles.active_linmas_btn} ${pops.className}`}
-        onClick={handleShow}
-      >
+      <button className={`${styles.active_linmas_btn}`} onClick={handleShow}>
         <span>Aktif</span>
       </button>
       <Modal
         show={show}
         onHide={handleClose}
-        className={`${pops.className} ${styles.modal_container}`}
+        className={`${styles.modal_container}`}
       >
         <div className={`${styles.modal_header}`}>
           <Modal.Header closeButton>
@@ -71,11 +63,9 @@ function ActiveLinmas() {
                   className={`${styles.select_linmas_pelapor}`}
                   {...register("reason_stop")}
                 >
-                  <>
-                    {reportLinmasName.map((linmasName) => {
-                      return <option key={linmasName}>{linmasName}</option>;
-                    })}
-                  </>
+                  {reportLinmasName.map((linmasName) => {
+                    return <option key={linmasName}>{linmasName}</option>;
+                  })}
                 </select>
               </div>
               <div className={`${styles.input_cancel_btn} ms-auto`}>

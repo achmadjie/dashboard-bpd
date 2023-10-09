@@ -14,11 +14,6 @@ import ActiveLinmas from "../activate-linmas/ActivateLinmas";
 import NonActiveLinmas from "../non-activate-linmas/NonActivateLinmas";
 import EditLinmasModal from "../edit-linmas-modal/EditLinmasModal";
 
-const pops = Poppins({
-  weight: ["600"],
-  subsets: ["latin"],
-});
-
 const tableHeader = [
   "No.",
   "Nama Linmas",
@@ -101,9 +96,7 @@ const tableData = [
 
 function TableListLinmas() {
   return (
-    <div
-      className={`${styles.tablelistlinmas_container} ${pops.className} container-fluid p-0`}
-    >
+    <div className={`${styles.tablelistlinmas_container}  container-fluid p-0`}>
       <div
         className={`${styles.title_with_see_more_container} d-flex justify-content-between align-items-center`}
       >
@@ -133,83 +126,48 @@ function TableListLinmas() {
       >
         <tbody className={`${styles.table_body}`}>
           <tr className={``}>
-            <>
-              {tableHeader.map((item, idx) => {
-                return (
-                  <>
-                    <th
-                      className={`${styles.table_header} ${
-                        item === "Nama Linmas" ? `text-start` : `text-center`
-                      }`}
-                      key={idx}
-                    >
-                      {item}
-                    </th>
-                  </>
-                );
-              })}
-            </>
+            {tableHeader.map((item, idx) => {
+              return (
+                <th
+                  className={`${styles.table_header} ${
+                    item === "Nama Linmas" ? `text-start` : `text-center`
+                  }`}
+                  key={idx}
+                >
+                  {item}
+                </th>
+              );
+            })}
           </tr>
           <>
             {tableData.map((data, idx) => {
               return (
-                <>
-                  {/* <div
-                    key={data.id}
-                    className={`${
-                      data.no % 2 === 0 ? styles.table_data_background : ``
-                    }`}
-                  > */}
-                    <tr className={`${styles.data_table}`}>
-                      <td
-                        className={`${styles.table_data_number}`}
-                        key={idx}
-                      >
-                        {data.no}
-                      </td>
-                      <td
-                        className={`${styles.table_data_name} text-start`}
-                        key={idx}
-                      >
-                        {data.name}
-                      </td>
-                      <td
-                        className={`${styles.table_data_gender}`}
-                        key={idx}
-                      >
-                        {data.gender}
-                      </td>
-                      <td className={`${styles.table_data_age}`} key={idx}>
-                        {data.age}
-                      </td>
-                      <td
-                        className={`${styles.table_data_numKTA}`}
-                        key={idx}
-                      >
-                        {data.numKTA}
-                      </td>
-                      <td
-                        className={`${styles.table_data_numRTRW}`}
-                        key={idx}
-                      >
-                        {data.numRTRW}
-                      </td>
-                      <td
-                        key={idx}
-                        className={`${styles.table_data_status}`}
-                      >
-                        {data.status === "Aktif" ? (
-                          <ActiveLinmas/>
-                        ) : (
-                          <NonActiveLinmas />
-                        )}
-                      </td>
-                      <td className={`${styles.table_data_action}`}>
-                        <data.action key={idx} />
-                      </td>
-                    </tr>
-                  {/* </div> */}
-                </>
+                <tr className={`${styles.data_table}`} key={idx}>
+                  <td className={`${styles.table_data_number}`}>{data.no}</td>
+                  <td className={`${styles.table_data_name} text-start`}>
+                    {data.name}
+                  </td>
+                  <td className={`${styles.table_data_gender}`}>
+                    {data.gender}
+                  </td>
+                  <td className={`${styles.table_data_age}`}>{data.age}</td>
+                  <td className={`${styles.table_data_numKTA}`}>
+                    {data.numKTA}
+                  </td>
+                  <td className={`${styles.table_data_numRTRW}`}>
+                    {data.numRTRW}
+                  </td>
+                  <td className={`${styles.table_data_status}`}>
+                    {data.status === "Aktif" ? (
+                      <ActiveLinmas />
+                    ) : (
+                      <NonActiveLinmas />
+                    )}
+                  </td>
+                  <td className={`${styles.table_data_action}`}>
+                    <data.action />
+                  </td>
+                </tr>
               );
             })}
           </>

@@ -5,14 +5,10 @@ import Modal from "react-bootstrap/Modal";
 import { VscDiffAdded } from "react-icons/vsc";
 import { useForm } from "react-hook-form";
 import { Poppins } from "next/font/google";
-import {IoIosAdd} from "react-icons/io";
+import { IoIosAdd } from "react-icons/io";
 
 import styles from "./InputLinmasModal.module.css";
-
-const pops = Poppins({
-  weight: ["400"],
-  subsets: ["latin"],
-}); 
+import dynamic from "next/dynamic";
 
 function InputLinmasModal() {
   const [show, setShow] = useState(false);
@@ -36,14 +32,15 @@ function InputLinmasModal() {
 
   return (
     <>
-      <button
-        className={`${styles.linmas_input_btn} ${pops.className}`}
-        onClick={handleShow}
-      >
+      <button className={`${styles.linmas_input_btn} `} onClick={handleShow}>
         <span>Input Linmas</span>
         <VscDiffAdded className={`${styles.add_icon}`}></VscDiffAdded>
       </button>
-      <Modal show={show} onHide={handleClose} className={`${pops.className} ${styles.modal_container}`}>
+      <Modal
+        show={show}
+        onHide={handleClose}
+        className={` ${styles.modal_container}`}
+      >
         <div className={`${styles.modal_header}`}>
           <Modal.Header closeButton>
             <Modal.Title>Input Linmas</Modal.Title>
@@ -73,7 +70,7 @@ function InputLinmasModal() {
               className={`${styles.input_individu_linmas_container} ${
                 toggle === 1 ? styles.show_input : styles.hide_input
               } flex-column gap-3 `}
-              onSubmit={handleSubmit(onSubmit)} 
+              onSubmit={handleSubmit(onSubmit)}
             >
               <div
                 className={`${styles.linmas_name_container} d-flex flex-column`}
@@ -166,8 +163,10 @@ function InputLinmasModal() {
                 />
               </div>
               <div className={`${styles.input_cancel_btn} ms-auto `}>
-                <button show={show} onHide={handleClose}>Cancel</button>
-                <input type="submit" value="Input"/>
+                <button show={show} onHide={handleClose}>
+                  Cancel
+                </button>
+                <input type="submit" value="Input" />
               </div>
               {errors.exampleRequired && <span>This field is required</span>}
             </form>
@@ -253,7 +252,7 @@ function InputLinmasModal() {
                   className={`${styles.input_linmas_form}`}
                   placeholder="13058136083"
                   type="number"
-                  {...register("linmas_KTA_num")} 
+                  {...register("linmas_KTA_num")}
                 />
               </div>
               <div className={`d-flex flex-column`}>
@@ -270,7 +269,9 @@ function InputLinmasModal() {
                 <IoIosAdd></IoIosAdd>
               </div>
               <div className={`${styles.input_cancel_btn} ms-auto `}>
-                <button show={show} onHide={handleClose}>Cancel</button>
+                <button show={show} onHide={handleClose}>
+                  Cancel
+                </button>
                 <input type="submit" value="Input" />
               </div>
               {errors.exampleRequired && <span>This field is required</span>}

@@ -8,11 +8,6 @@ import { FiEyeOff, FiSettings } from "react-icons/fi";
 
 import styles from "./ChangePassword.module.css";
 
-const pops = Poppins({
-  weight: ["400", "500","600"],
-  subsets: ["latin"],
-});
-
 function ChangePassword() {
   const [show, setShow] = useState(false);
 
@@ -30,16 +25,16 @@ function ChangePassword() {
   return (
     <>
       <button
-        className={`${styles.active_linmas_btn} ${styles.main_menu_item} ${pops.className} d-flex align-items-center`}
+        className={`${styles.active_linmas_btn} ${styles.main_menu_item} d-flex align-items-center`}
         onClick={handleShow}
       >
-        <FiSettings className={`${styles.menu_icon}`}/>
-		<div className={`${styles.menu_name}`}>Ubah Password</div>
+        <FiSettings className={`${styles.menu_icon}`} />
+        <div className={`${styles.menu_name}`}>Ubah Password</div>
       </button>
       <Modal
         show={show}
         onHide={handleClose}
-        className={`${pops.className} ${styles.modal_container}`}
+        className={`${styles.modal_container}`}
       >
         <div className={`${styles.modal_header}`}>
           <Modal.Header closeButton>
@@ -57,7 +52,7 @@ function ChangePassword() {
               >
                 <span>Password Lama</span>
                 <input
-                  className={`${styles.password_box} ${pops.className}`}
+                  className={`${styles.password_box}`}
                   type="password"
                   {...register("Password", { required: true })}
                   placeholder="........"
@@ -71,7 +66,7 @@ function ChangePassword() {
               >
                 <span>Password Baru</span>
                 <input
-                  className={`${styles.password_box} ${pops.className}`}
+                  className={`${styles.password_box}`}
                   type="password"
                   {...register("Password", { required: true })}
                   placeholder="........"
@@ -85,7 +80,7 @@ function ChangePassword() {
               >
                 <span>Konfirmasi Password Baru</span>
                 <input
-                  className={`${styles.password_box} ${pops.className}`}
+                  className={`${styles.password_box}`}
                   type="password"
                   {...register("Password", { required: true })}
                   placeholder="........"
@@ -94,7 +89,7 @@ function ChangePassword() {
                   <FiEyeOff className={`${styles.eyes_icon_close}`} />
                 </div>
               </div>
-			  <div className={`${styles.input_cancel_btn} ms-auto`}>
+              <div className={`${styles.input_cancel_btn} ms-auto`}>
                 <button show={show} onHide={handleClose}>
                   Cancel
                 </button>

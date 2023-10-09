@@ -8,145 +8,113 @@
 // import pic_3 from "../../assets/image/pexels-mathias-reding-17837373.jpg";
 import React from "react";
 import Slider from "react-slick";
-import ReactPlayer from "react-player/youtube";
-import { Poppins } from "next/font/google";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./CarouselItem.css";
 import styles from "./CarouselItem.module.css";
+import dynamic from "next/dynamic";
 
-const InnerSlider = Slider.InnerSlider;
-
-
-const pops = Poppins({
-  subsets: ["latin"],
-  weight: ["400"],
+const ReactPlayer = dynamic(() => import("react-player/youtube"), {
+  ssr: false,
 });
 
+const CustomArrow = ({ currentSlide, slideCount, children, ...props }) => {
+  return <div {...props}>{children}</div>;
+};
+
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 7000,
+  cssEase: "linear",
+  nextArrow: (
+    <CustomArrow>
+      <IoIosArrowForward />
+    </CustomArrow>
+  ),
+  prevArrow: (
+    <CustomArrow>
+      <IoIosArrowBack />
+    </CustomArrow>
+  ),
+};
+
+const slides = [
+  {
+    id: 1,
+    title: "Ayo Ikuti Event Desa Bersih Nasional!",
+    content: `Sebanyak 50 desa wisata di seluruh NTB melakukan aksi
+  bersih-bersih untuk menyambut hari peduli sampah nasional dan
+  bersih destinasi wisata. Aksi gotong royong membersihkan sampah di
+  setiap akses jalan dan sudut desa wisata tersebut untuk mendukung
+  dan mempercepat terwujudnya NTB zero waste atau mewujudkan
+  lingkungan bersih dan sehat.`,
+    video: "https://youtu.be/dw0fagEVNqI?si=BdLGPnkpvVUyl0fG",
+  },
+  {
+    id: 2,
+    title: "Ayo Ikuti Event Desa Bersih Nasional!",
+    content: `Sebanyak 50 desa wisata di seluruh NTB melakukan aksi
+  bersih-bersih untuk menyambut hari peduli sampah nasional dan
+  bersih destinasi wisata. Aksi gotong royong membersihkan sampah di
+  setiap akses jalan dan sudut desa wisata tersebut untuk mendukung
+  dan mempercepat terwujudnya NTB zero waste atau mewujudkan
+  lingkungan bersih dan sehat.`,
+    video: "https://youtu.be/dw0fagEVNqI?si=BdLGPnkpvVUyl0fG",
+  },
+  {
+    id: 3,
+    title: "Ayo Ikuti Event Desa Bersih Nasional!",
+    content: `Sebanyak 50 desa wisata di seluruh NTB melakukan aksi
+  bersih-bersih untuk menyambut hari peduli sampah nasional dan
+  bersih destinasi wisata. Aksi gotong royong membersihkan sampah di
+  setiap akses jalan dan sudut desa wisata tersebut untuk mendukung
+  dan mempercepat terwujudnya NTB zero waste atau mewujudkan
+  lingkungan bersih dan sehat.`,
+    video: "https://youtu.be/dw0fagEVNqI?si=BdLGPnkpvVUyl0fG",
+  },
+];
+
 function CarouselItem() {
-  
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 7000,
-    cssEase: "linear",
-    nextArrow: <IoIosArrowForward />,
-    prevArrow: <IoIosArrowBack />,
-  };
-
-  // const slides = [
-  //   { id: 1 },
-  //   { id: 2 },
-  //   { id: 3 },
-  // ];
-
   return (
     <div
-      className={`${styles.carousel_container} ${pops.className} container-fluid d-flex flex-column justify-content-center`}
+      className={`${styles.carousel_container}  container-fluid d-flex flex-column justify-content-center`}
     >
       <Slider {...settings}>
-      {/* <InnerSlider slides={slides} /> */}
-        <div
-          className={`${styles.main_carousel_container} d-flex justify-content-center`}
-        >
+        {/* <InnerSlider slides={slides} /> */}
+        {slides.map((slide) => (
           <div
-            className={`${styles.video_carousel_container} d-flex align-items-center`}
+            className={`${styles.main_carousel_container} d-flex justify-content-center`}
+            key={slide.id}
           >
-            <ReactPlayer
-              url="https://youtu.be/dw0fagEVNqI?si=BdLGPnkpvVUyl0fG"
-              width={440}
-              height={240}
-              volume={1}
-              muted={true}
-              controls={true}
-            ></ReactPlayer>
+            <div
+              className={`${styles.video_carousel_container} d-flex align-items-center`}
+            >
+              <ReactPlayer
+                url={slide.video}
+                width={440}
+                height={240}
+                volume={1}
+                muted={true}
+                controls={true}
+              ></ReactPlayer>
+            </div>
+            <div
+              className={`${styles.title_desc_carousel_container} d-flex flex-column justify-content-center align-items-start`}
+            >
+              <h3>{slide.title}</h3>
+              <p>{slide.content}</p>
+              <button className={`${styles.register_village_btn}`}>
+                Daftarkan Desa
+              </button>
+            </div>
           </div>
-          <div
-            className={`${styles.title_desc_carousel_container} d-flex flex-column justify-content-center align-items-start`}
-          >
-            <h3>Ayo Ikuti Event Desa Bersih Nasional!</h3>
-            <p>
-              Sebanyak 50 desa wisata di seluruh NTB melakukan aksi
-              bersih-bersih untuk menyambut hari peduli sampah nasional dan
-              bersih destinasi wisata. Aksi gotong royong membersihkan sampah di
-              setiap akses jalan dan sudut desa wisata tersebut untuk mendukung
-              dan mempercepat terwujudnya NTB zero waste atau mewujudkan
-              lingkungan bersih dan sehat.
-            </p>
-            <button className={`${styles.register_village_btn}`}>
-              Daftarkan Desa
-            </button>
-          </div>
-        </div>
-        <div
-          className={`${styles.main_carousel_container} d-flex justify-content-center`}
-        >
-          <div
-            className={`${styles.video_carousel_container} d-flex align-items-center`}
-          >
-            <ReactPlayer
-              url="https://youtu.be/dw0fagEVNqI?si=BdLGPnkpvVUyl0fG"
-              width={440}
-              height={240}
-              volume={1}
-              muted={true}
-              controls={true}
-            ></ReactPlayer>
-          </div>
-          <div
-            className={`${styles.title_desc_carousel_container} d-flex flex-column justify-content-center align-items-start`}
-          >
-            <h3>Ayo Ikuti Event Desa Bersih Nasional!</h3>
-            <p>
-              Sebanyak 50 desa wisata di seluruh NTB melakukan aksi
-              bersih-bersih untuk menyambut hari peduli sampah nasional dan
-              bersih destinasi wisata. Aksi gotong royong membersihkan sampah di
-              setiap akses jalan dan sudut desa wisata tersebut untuk mendukung
-              dan mempercepat terwujudnya NTB zero waste atau mewujudkan
-              lingkungan bersih dan sehat.
-            </p>
-            <button className={`${styles.register_village_btn}`}>
-              Daftarkan Desa
-            </button>
-          </div>
-        </div>
-        <div
-          className={`${styles.main_carousel_container} d-flex justify-content-center `}
-        >
-          <div
-            className={`${styles.video_carousel_container} d-flex align-items-center`}
-          >
-            <ReactPlayer
-              url="https://youtu.be/dw0fagEVNqI?si=BdLGPnkpvVUyl0fG"
-              width={440}
-              height={240}
-              volume={1}
-              muted={true}
-              controls={true}
-            ></ReactPlayer>
-          </div>
-          <div
-            className={`${styles.title_desc_carousel_container} d-flex flex-column justify-content-center align-items-start`}
-          >
-            <h3>Ayo Ikuti Event Desa Bersih Nasional!</h3>
-            <p>
-              Sebanyak 50 desa wisata di seluruh NTB melakukan aksi
-              bersih-bersih untuk menyambut hari peduli sampah nasional dan
-              bersih destinasi wisata. Aksi gotong royong membersihkan sampah di
-              setiap akses jalan dan sudut desa wisata tersebut untuk mendukung
-              dan mempercepat terwujudnya NTB zero waste atau mewujudkan
-              lingkungan bersih dan sehat.
-            </p>
-            <button className={`${styles.register_village_btn}`}>
-              Daftarkan Desa
-            </button>
-          </div>
-        </div>
+        ))}
       </Slider>
     </div>
   );

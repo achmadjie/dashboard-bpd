@@ -6,11 +6,6 @@ import { Poppins } from "next/font/google";
 
 import styles from "./TableLaporan.module.css";
 
-const pops = Poppins({
-  subsets: ["latin"],
-  weight: ["500"],
-});
-
 const tableHeader = [
   "No.",
   "Judul Laporan",
@@ -89,9 +84,7 @@ const tableData = [
 
 function TableLaporan() {
   return (
-    <div
-      className={`${styles.table_laporan_container} container-fluid ${pops.className}`}
-    >
+    <div className={`${styles.table_laporan_container} container-fluid `}>
       <div
         className={`${styles.title_search_sort_container} d-flex flex-column gap-4`}
       >
@@ -156,67 +149,47 @@ function TableLaporan() {
       >
         <tbody className={`${styles.table_body}`}>
           <tr className={``}>
-            <>
-              {tableHeader.map((item) => {
-                return (
-                  <>
-                    <th
-                      className={`${styles.table_header} ${
-                        item === "Nama Linmas" ||
-                        item === "Judul Laporan" ||
-                        item === "Jenis"
-                          ? `text-start`
-                          : `text-center`
-                      } `}
-                      key={item}
-                    >
-                      {item}
-                    </th>
-                  </>
-                );
-              })}
-            </>
+            {tableHeader.map((item) => {
+              return (
+                <th
+                  className={`${styles.table_header} ${
+                    item === "Nama Linmas" ||
+                    item === "Judul Laporan" ||
+                    item === "Jenis"
+                      ? `text-start`
+                      : `text-center`
+                  } `}
+                  key={item}
+                >
+                  {item}
+                </th>
+              );
+            })}
           </tr>
           <>
             {tableData.map((data) => {
               return (
-                <>
-                  <tr className={`${styles.data_table}`} key={data.id}>
-                    <td className={`${styles.table_data_number}`} key={data.id}>
-                      {data.no}
-                    </td>
-                    <td
-                      className={`${styles.table_data_report_title} text-start`}
-                      key={data.id}
-                    >
-                      {data.ReportTitle}
-                    </td>
-                    <td
-                      className={`${styles.table_data_name} text-start`}
-                      key={data.id}
-                    >
-                      {data.name}
-                    </td>
-                    <td
-                      className={`${styles.table_data_type} text-start`}
-                      key={data.id}
-                    >
-                      {data.type}
-                    </td>
-                    <td className={`${styles.table_data_date}`} key={data.id}>
-                      {data.date}
-                    </td>
-                    <td
-                      key={data.id}
-                      className={`${styles.table_data_attachment} container`}
-                    >
-                      {data.attachment}
-                    </td>
-                    <td className={`${styles.table_data_action}`}>
-                      <data.action key={data.id} />
-                    </td>
-                  </tr>
-                </>
+                <tr className={`${styles.data_table}`} key={data.id}>
+                  <td className={`${styles.table_data_number}`}>{data.no}</td>
+                  <td
+                    className={`${styles.table_data_report_title} text-start`}
+                  >
+                    {data.ReportTitle}
+                  </td>
+                  <td className={`${styles.table_data_name} text-start`}>
+                    {data.name}
+                  </td>
+                  <td className={`${styles.table_data_type} text-start`}>
+                    {data.type}
+                  </td>
+                  <td className={`${styles.table_data_date}`}>{data.date}</td>
+                  <td className={`${styles.table_data_attachment} container`}>
+                    {data.attachment}
+                  </td>
+                  <td className={`${styles.table_data_action}`}>
+                    <data.action />
+                  </td>
+                </tr>
               );
             })}
           </>

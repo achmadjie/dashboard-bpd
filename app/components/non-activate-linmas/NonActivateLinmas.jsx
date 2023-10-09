@@ -7,11 +7,6 @@ import { Poppins } from "next/font/google";
 
 import styles from "./NonActivateLinmas.module.css";
 
-const pops = Poppins({
-  weight: ["400", "600"],
-  subsets: ["latin"],
-});
-
 function NonActiveLinmas() {
   const [show, setShow] = useState(false);
 
@@ -29,7 +24,7 @@ function NonActiveLinmas() {
   return (
     <>
       <button
-        className={`${styles.non_active_linmas_btn} ${pops.className}`}
+        className={`${styles.non_active_linmas_btn}`}
         onClick={handleShow}
       >
         <span>Non-Aktif</span>
@@ -37,7 +32,7 @@ function NonActiveLinmas() {
       <Modal
         show={show}
         onHide={handleClose}
-        className={`${pops.className} ${styles.modal_container}`}
+        className={` ${styles.modal_container}`}
       >
         <div className={`${styles.modal_header}`}>
           <Modal.Header closeButton>

@@ -8,11 +8,6 @@ import peruri_logo from "../../assets/logo/powered-by-peruri.svg";
 
 import styles from "./Login.module.css";
 
-const pops = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "600"],
-});
-
 function Login() {
   return (
     <div className={`${styles.login_section} container-fluid`}>
@@ -34,14 +29,20 @@ function Login() {
             alt="dirjen-bpd-logo"
             priority={true}
           />
-          <h1 className={`${pops.className} ${styles.login_heading} container-fluid text-center`}>Masuk</h1>
+          <h1 className={`${styles.login_heading} container-fluid text-center`}>
+            Masuk
+          </h1>
           <LoginForm />
-          <p className={`${styles.login_paragraf} ${pops.className} container-fluid d-flex justify-content-center`}>
+          <p
+            className={`${styles.login_paragraf} container-fluid d-flex justify-content-center`}
+          >
             Masukkan alamat email dan kata sandi yang telah diberikan Kemendagri
             apabila anda pertama kali melakukan login
           </p>
         </div>
-        <div className={`${styles.peruri_logo_container} d-flex container-fluid justify-content-center`}>
+        <div
+          className={`${styles.peruri_logo_container} d-flex container-fluid justify-content-center`}
+        >
           <Image
             className={`${styles.peruri_logo} img-fluid`}
             src={peruri_logo}

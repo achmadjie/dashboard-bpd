@@ -1,5 +1,5 @@
 import React from "react";
-import dynamic from 'next/dynamic';
+import dynamic from "next/dynamic";
 import { FiUsers } from "react-icons/fi";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import Image from "next/image";
@@ -12,19 +12,16 @@ import { Poppins } from "next/font/google";
 
 import styles from "./DashboardContent.module.css";
 
-const InputLinmasModal = dynamic(() => import('../input-linmas-modal/InputLinmasModal'))
-const InputLaporanModal = dynamic(() => import('../input-laporan-modal/InputLaporanModal'))
-
-const pops = Poppins({
-  subsets: ["latin"],
-  weight: ["500"],
-});
+const InputLinmasModal = dynamic(() =>
+  import("../input-linmas-modal/InputLinmasModal")
+);
+const InputLaporanModal = dynamic(() =>
+  import("../input-laporan-modal/InputLaporanModal")
+);
 
 function DashboardContent() {
   return (
-    <div
-      className={`${styles.dashboard_section} ${pops.className} container-fluid`}
-    >
+    <div className={`${styles.dashboard_section}  container-fluid`}>
       <div
         className={`${styles.dashboard_main_container} d-flex gap-5 justify-content-between`}
       >

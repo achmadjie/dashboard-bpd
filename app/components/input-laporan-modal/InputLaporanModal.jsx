@@ -8,11 +8,6 @@ import { Poppins } from "next/font/google";
 
 import styles from "./InputModalLaporan.module.css";
 
-const pops = Poppins({
-  weight: ["400"],
-  subsets: ["latin"],
-});
-
 function InputLaporanModal() {
   const [show, setShow] = useState(false);
 
@@ -35,17 +30,14 @@ function InputLaporanModal() {
   ];
   return (
     <>
-      <button
-        className={`${styles.laporan_input_btn} ${pops.className}`}
-        onClick={handleShow}
-      >
+      <button className={`${styles.laporan_input_btn} `} onClick={handleShow}>
         <span>Input Laporan</span>
         <VscDiffAdded className={`${styles.add_icon}`}></VscDiffAdded>
       </button>
       <Modal
         show={show}
         onHide={handleClose}
-        className={`${pops.className} ${styles.modal_container}`}
+        className={` ${styles.modal_container}`}
       >
         <div className={`${styles.modal_header}`}>
           <Modal.Header closeButton>
@@ -97,8 +89,8 @@ function InputLaporanModal() {
                   className={`${styles.input_laporan_form}`}
                   placeholder="Lorem ipsum dolor sit amet consectetur. Dolor condimentum morbi sit ornare suscipit nisi dignissim. Accumsan neque enim massa morbi tellus quis placerat viverra. Et magna dignissim habitasse sed magna orci tincidunt blandit scelerisque. Et laoreet hendrerit aliquam tincidunt. Nunc tristique lectus euismod facilisis. Tincidunt aliquam fermentum sed adipiscing eget quis est aenean aliquet.
 				  Lacus imperdiet nunc potenti enim. Aliquam facilisis amet tempus lacus aliquam dictum sit blandit. Scelerisque quisque augue platea nam dignissim mauris ac nisl id. Sapien interdum sagittis iaculis varius etiam in."
-				  rows={13.5}
-				  {...register("laporan_desc")}
+                  rows={13.5}
+                  {...register("laporan_desc")}
                 />
               </div>
               <div

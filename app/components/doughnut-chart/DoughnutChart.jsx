@@ -53,17 +53,16 @@ function DoughnutChart() {
         <>
           {informationAge.map((item) => {
             return (
-              <>
+              <div
+                key={item.id}
+                className={`${styles.information_container} d-flex align-items-center gap-2`}
+              >
                 <div
-                  key={item.id}
-                  className={`${styles.information_container} d-flex align-items-center gap-2`}
-                >
-                  <div
-                    className={`${styles.color_age} ${
-                      item.infoAge === "Remaja (12 - 17 Thn)"
-                        ? styles.color_age_blue
-                        : ""
-                    }
+                  className={`${styles.color_age} ${
+                    item.infoAge === "Remaja (12 - 17 Thn)"
+                      ? styles.color_age_blue
+                      : ""
+                  }
                     ${
                       item.infoAge === "Dewasa (17 - 63 Thn)"
                         ? styles.color_age_red
@@ -75,10 +74,9 @@ function DoughnutChart() {
                         : ""
                     }
                     `}
-                  ></div>
-                  <span>{item.infoAge}</span>
-                </div>
-              </>
+                ></div>
+                <span>{item.infoAge}</span>
+              </div>
             );
           })}
         </>

@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-// import dynamic from 'next/dynamic';
 import Image from "next/image";
 import Link from "next/link";
 import linmas_logo from "../../assets/logo/Linmas_Logo-1.svg";
@@ -10,48 +9,40 @@ import {
   MdOutlineKeyboardArrowRight,
   MdDashboard,
 } from "react-icons/md";
+import { VscSignOut } from "react-icons/vsc";
 import { HiOutlineClipboardList } from "react-icons/hi";
-// import { FiSettings } from "react-icons/fi";
-import { PiSignOutLight } from "react-icons/pi";
 import { BsFolder2Open, BsBarChartLine } from "react-icons/bs";
-import { Poppins } from "next/font/google";
 import { Avatar } from "@mui/material";
 import peruri_logo from "../../assets/logo/powered-by-peruri.svg";
 import ChangePassword from "../change-password/ChangePassword";
 
 import styles from "./SideBar.module.css";
-
-const pops = Poppins({
-  subsets: ["latin"],
-  weight: ["500", "800"],
-});
+import { usePathname } from "next/navigation";
 
 // const ChangePassword = dynamic(() => import('../change-password/ChangePassword'))
 
+const linmasMenu = [
+  "RT/RW",
+  "PKK",
+  "Karang Taruna",
+  "POSYANDU",
+  "LPM",
+  "LAD",
+  "BPD",
+  "Kerja Sama",
+];
+
+const mainMenu = [
+  { icon: MdDashboard, name: "Dashboard", href: "/" },
+  { icon: HiOutlineClipboardList, name: "List Linmas", href: "/list-linmas" },
+  { icon: BsFolder2Open, name: "List Laporan", href: "/list-laporan" },
+  { icon: BsBarChartLine, name: "Statistik Desa", href: "/statistik" },
+  { icon: ChangePassword, name: "", href: "/change-password" },
+];
+
 function SideBar() {
-  
-
-  const linmasMenu = [
-    "RT/RW",
-    "PKK",
-    "Karang Taruna",
-    "POSYANDU",
-    "LPM",
-    "LAD",
-    "BPD",
-    "Kerja Sama",
-  ];
-
-  const mainMenu = [
-    { icon: MdDashboard, name: "Dashboard" },
-    { icon: HiOutlineClipboardList, name: "List Linmas" },
-    { icon: BsFolder2Open, name: "List Laporan" },
-    { icon: BsBarChartLine, name: "Statistik Desa" },
-    { icon: ChangePassword, name: "" },
-  ];
-  
-
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
   const handleClick = () => {
     setIsOpen(!isOpen);
@@ -65,7 +56,7 @@ function SideBar() {
 
   return (
     <div
-      className={`${styles.sidebar_container} ${pops.className} d-flex flex-column justify-content-between`}
+      className={`${styles.sidebar_container} d-flex flex-column justify-content-between`}
     >
       <div
         className={`${styles.logo_menu_container} d-flex flex-column justify-content-center gap-5`}
@@ -104,9 +95,7 @@ function SideBar() {
                       {linmasMenu.map((menu, idx) => {
                         /* eslint-disable */
                         return (
-                          <li className={`${styles.menu_items}`}>
-                            {menu}
-                          </li>
+                          <li className={`${styles.menu_items}`}>{menu}</li>
                         );
                       })}
                     </>
@@ -132,27 +121,24 @@ function SideBar() {
         <div
           className={`${styles.main_menu_container} d-flex flex-column gap-5`}
         >
-          <>
-            {mainMenu.map((menu, idx) => {
-              return (
-                <>
-                  <div
-                    onClick={() => updateToggle(idx)}
-                    key={idx}
-                    className={`${
-                      styles.main_menu_item
-                    } d-flex align-items-center ${
-                      toggle === idx ? styles.active : ""
-                    }`}
-                  >
-                    <menu.icon className={`${styles.menu_icon}`} />
-                    <div className={`${styles.menu_name}`}>{menu.name}</div>
-                    {/* <menu.name /> */}
-                  </div>
-                </>
-              );
-            })}
-          </>
+          {mainMenu.map((menu, idx) => {
+            return (
+              <Link href={menu.href} key={idx}>
+                <div
+                  onClick={() => updateToggle(idx)}
+                  className={`${
+                    styles.main_menu_item
+                  } d-flex align-items-center ${
+                    pathname === menu.href ? styles.active : ""
+                  }`}
+                >
+                  <menu.icon className={`${styles.menu_icon}`} />
+                  <div className={`${styles.menu_name}`}>{menu.name}</div>
+                  {/* <menu.name /> */}
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </div>
       <div
@@ -162,7 +148,7 @@ function SideBar() {
           href="/login/Login"
           className={`${styles.signout_container} d-flex align-items-center gap-2`}
         >
-          <PiSignOutLight className={`${styles.signout_icon}`}></PiSignOutLight>
+          <VscSignOut className={`${styles.signout_icon}`}></VscSignOut>
           <span className={`${styles.signout_text}`}>Keluar</span>
         </Link>
         <Image

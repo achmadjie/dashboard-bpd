@@ -54,7 +54,7 @@
 .slick-prev:focus,
 .slick-next:hover,
 .slick-next:focus {
-  color: #386BBC;
+  color: #386bbc;
   outline: none;
   background: transparent;
 }
@@ -71,7 +71,7 @@
   padding: 0;
   transform: translate(0, -50%);
   cursor: pointer;
-  color: #386BBC;
+  color: #386bbc;
   border: none;
   outline: none;
   background: transparent;
@@ -79,13 +79,13 @@
 }
 
 .slick-next {
-    right: -15px;
+  right: -15px;
 }
 
 .slick-prev {
-    left: -15px;
+  left: -15px;
 }
 
-.slick-slider{
+.slick-slider {
   user-select: text;
 }

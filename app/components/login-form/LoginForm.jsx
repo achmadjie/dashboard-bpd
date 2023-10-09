@@ -11,11 +11,6 @@ import { Poppins, Inter } from "next/font/google";
 
 import styles from "./LoginForm.module.css";
 
-const pops = Poppins({
-  subsets: ["latin"],
-  weight: ["500"],
-});
-
 const inter = Inter({
   subsets: ["latin"],
   weight: ["400"],
@@ -48,7 +43,7 @@ function LoginForm() {
 
   return (
     <div
-      className={`${styles.login_container} d-flex justify-content-center container-fluid ${pops.className}`}
+      className={`${styles.login_container} d-flex justify-content-center container-fluid`}
     >
       <form
         onSubmit={handleSubmit(onSubmit)}

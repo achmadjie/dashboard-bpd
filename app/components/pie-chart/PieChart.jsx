@@ -49,34 +49,27 @@ function PieChart() {
       <div
         className={`${styles.information_section} ${montserratFont.className} d-flex flex-column gap-3 justify-content-center mx-auto`}
       >
-        <>
-          {informationGender.map((item) => {
-            return (
-              <>
-                <div
-                  key={item.id}
-                  className={`${styles.information_container} d-flex align-items-center gap-2`}
-                >
-                  <div
-				  key={item.id}
-                    className={`${styles.color_gender} ${
-                      item.infoGender === "Laki-Laki"
-                        ? styles.color_age_blue
-                        : ""
-                    }
+        {informationGender.map((item) => {
+          return (
+            <div
+              key={item.id}
+              className={`${styles.information_container} d-flex align-items-center gap-2`}
+            >
+              <div
+                className={`${styles.color_gender} ${
+                  item.infoGender === "Laki-Laki" ? styles.color_age_blue : ""
+                }
                     ${
                       item.infoGender === "Perempuan"
                         ? styles.color_age_yellow
                         : ""
                     }
                     `}
-                  ></div>
-                  <span key={item.id}>{item.infoGender}</span>
-                </div>
-              </>
-            );
-          })}
-        </>
+              ></div>
+              <span>{item.infoGender}</span>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

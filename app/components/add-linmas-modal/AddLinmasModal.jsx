@@ -5,14 +5,9 @@ import Modal from "react-bootstrap/Modal";
 import { IoAddSharp } from "react-icons/io5";
 import { useForm } from "react-hook-form";
 import { Poppins } from "next/font/google";
-import {IoIosAdd} from "react-icons/io";
+import { IoIosAdd } from "react-icons/io";
 
 import styles from "./AddLinmasModal.module.css";
-
-const pops = Poppins({
-  weight: ["400"],
-  subsets: ["latin"],
-});
 
 function AddLinmasModal() {
   const [show, setShow] = useState(false);
@@ -36,14 +31,15 @@ function AddLinmasModal() {
 
   return (
     <>
-      <button
-        className={`${styles.linmas_input_btn} ${pops.className}`}
-        onClick={handleShow}
-      >
+      <button className={`${styles.linmas_input_btn} `} onClick={handleShow}>
         <span>Tambah</span>
         <IoAddSharp className={`${styles.add_icon}`} />
       </button>
-      <Modal show={show} onHide={handleClose} className={`${pops.className} ${styles.modal_container}`}>
+      <Modal
+        show={show}
+        onHide={handleClose}
+        className={` ${styles.modal_container}`}
+      >
         <div className={`${styles.modal_header}`}>
           <Modal.Header closeButton>
             <Modal.Title>Input Linmas</Modal.Title>
@@ -164,7 +160,9 @@ function AddLinmasModal() {
                 />
               </div>
               <div className={`${styles.input_cancel_btn} ms-auto `}>
-                <button show={show} onHide={handleClose}>Cancel</button>
+                <button show={show} onHide={handleClose}>
+                  Cancel
+                </button>
                 <input type="submit" value="Input" />
               </div>
               {errors.exampleRequired && <span>This field is required</span>}
@@ -267,7 +265,9 @@ function AddLinmasModal() {
                 <IoIosAdd></IoIosAdd>
               </div>
               <div className={`${styles.input_cancel_btn} ms-auto `}>
-                <button show={show} onHide={handleClose}>Cancel</button>
+                <button show={show} onHide={handleClose}>
+                  Cancel
+                </button>
                 <input type="submit" value="Input" />
               </div>
               {errors.exampleRequired && <span>This field is required</span>}
