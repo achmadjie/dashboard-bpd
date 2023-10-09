@@ -39,18 +39,18 @@ function CarouselItem() {
     prevArrow: <IoIosArrowBack />,
   };
 
-  const slides = [
-    { id: 1 },
-    { id: 2 },
-    { id: 3 },
-  ];
+  // const slides = [
+  //   { id: 1 },
+  //   { id: 2 },
+  //   { id: 3 },
+  // ];
 
   return (
     <div
       className={`${styles.carousel_container} ${pops.className} container-fluid d-flex flex-column justify-content-center`}
     >
       <Slider {...settings}>
-      <InnerSlider slides={slides} />
+      {/* <InnerSlider slides={slides} /> */}
         <div
           className={`${styles.main_carousel_container} d-flex justify-content-center`}
         >
