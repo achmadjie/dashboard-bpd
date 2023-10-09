@@ -1,11 +1,11 @@
 "use client";
 
-import Image from "next/image";
-import profile_pic from "../../assets/avatars/profile_picture.png";
-import avatar from "../../assets/avatars/avatar-image.svg";
-import pic_1 from "../../assets/image/pexels-bayram-musayev-15625100.jpg";
-import pic_2 from "../../assets/image/pexels-boys-in-bristol-photography-17967575.jpg";
-import pic_3 from "../../assets/image/pexels-mathias-reding-17837373.jpg";
+// import Image from "next/image";
+// import profile_pic from "../../assets/avatars/profile_picture.png";
+// import avatar from "../../assets/avatars/avatar-image.svg";
+// import pic_1 from "../../assets/image/pexels-bayram-musayev-15625100.jpg";
+// import pic_2 from "../../assets/image/pexels-boys-in-bristol-photography-17967575.jpg";
+// import pic_3 from "../../assets/image/pexels-mathias-reding-17837373.jpg";
 import React from "react";
 import Slider from "react-slick";
 import ReactPlayer from "react-player/youtube";
@@ -16,7 +16,8 @@ import "slick-carousel/slick/slick-theme.css";
 import "./CarouselItem.css";
 import styles from "./CarouselItem.module.css";
 
-const arrowForwad = <IoIosArrowForward />;
+const InnerSlider = Slider.InnerSlider;
+
 
 const pops = Poppins({
   subsets: ["latin"],
@@ -24,6 +25,7 @@ const pops = Poppins({
 });
 
 function CarouselItem() {
+  
   const settings = {
     dots: true,
     infinite: true,
@@ -37,29 +39,18 @@ function CarouselItem() {
     prevArrow: <IoIosArrowBack />,
   };
 
-  // const carouselImg = [
-  //   {
-  //     image: "../../../public/pexels-boys-in-bristol-photography-17967575.jpg",
-  //     title: "Ayo Ikuti Event Desa Bersih Nasional!",
-  //     desc: "Sebanyak 50 desa wisata di seluruh NTB melakukan aksi bersih-bersih untuk menyambut hari peduli sampah nasional dan bersih destinasi wisata. Aksi gotong royong membersihkan sampah di setiap akses jalan dan sudut desa wisata tersebut untuk mendukung dan mempercepat terwujudnya NTB zero waste atau mewujudkan lingkungan bersih dan sehat.",
-  //   },
-  //   {
-  //     image: "../../../public/pexels-bayram-musayev-15625100.jpg",
-  //     title: "Ayo Ikuti Event Desa Bersih Nasional!",
-  //     desc: "Sebanyak 50 desa wisata di seluruh NTB melakukan aksi bersih-bersih untuk menyambut hari peduli sampah nasional dan bersih destinasi wisata. Aksi gotong royong membersihkan sampah di setiap akses jalan dan sudut desa wisata tersebut untuk mendukung dan mempercepat terwujudnya NTB zero waste atau mewujudkan lingkungan bersih dan sehat.",
-  //   },
-  //   {
-  //     image: "../../../public/pexels-mathias-reding-17837373.jpg",
-  //     title: "Ayo Ikuti Event Desa Bersih Nasional!",
-  //     desc: "Sebanyak 50 desa wisata di seluruh NTB melakukan aksi bersih-bersih untuk menyambut hari peduli sampah nasional dan bersih destinasi wisata. Aksi gotong royong membersihkan sampah di setiap akses jalan dan sudut desa wisata tersebut untuk mendukung dan mempercepat terwujudnya NTB zero waste atau mewujudkan lingkungan bersih dan sehat.",
-  //   },
-  // ];
+  const slides = [
+    { id: 1 },
+    { id: 2 },
+    { id: 3 },
+  ];
 
   return (
     <div
       className={`${styles.carousel_container} ${pops.className} container-fluid d-flex flex-column justify-content-center`}
     >
       <Slider {...settings}>
+      <InnerSlider slides={slides} />
         <div
           className={`${styles.main_carousel_container} d-flex justify-content-center`}
         >
