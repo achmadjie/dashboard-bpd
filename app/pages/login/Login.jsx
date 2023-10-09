@@ -10,7 +10,7 @@ import styles from "./Login.module.css";
 
 const pops = Poppins({
   subsets: ["latin"],
-  weight: ["400"],
+  weight: ["400", "600"],
 });
 
 function Login() {
@@ -23,6 +23,7 @@ function Login() {
           className={`${styles.main_logo} img-fluid`}
           src={main_logo}
           alt="kemendagri-logo"
+          priority={true}
         />
         <div
           className={`${styles.login_main_section} d-flex flex-column align-items-center`}
@@ -31,6 +32,7 @@ function Login() {
             className={`${styles.dirjen_bpd_logo} img-fluid`}
             src={dirjen_bpd_logo}
             alt="dirjen-bpd-logo"
+            priority={true}
           />
           <h1 className={`${pops.className} ${styles.login_heading} container-fluid text-center`}>Masuk</h1>
           <LoginForm />

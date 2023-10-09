@@ -1,3 +1,5 @@
+// "use client";
+
 import React from "react";
 import SideBar from "../../components/side-bar/SideBar";
 import DashboardContent from "@/app/components/dashboard-content/DashboardContent";
