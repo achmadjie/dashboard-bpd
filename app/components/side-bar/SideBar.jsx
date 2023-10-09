@@ -29,6 +29,8 @@ const pops = Poppins({
 // const ChangePassword = dynamic(() => import('../change-password/ChangePassword'))
 
 function SideBar() {
+  
+
   const linmasMenu = [
     "RT/RW",
     "PKK",
@@ -100,8 +102,9 @@ function SideBar() {
                   <ul>
                     <>
                       {linmasMenu.map((menu, idx) => {
+                        /* eslint-disable */
                         return (
-                          <li key={idx} className={`${styles.menu_items}`}>
+                          <li className={`${styles.menu_items}`}>
                             {menu}
                           </li>
                         );

@@ -1,0 +1,38 @@
+.doughnut_container {
+  width: 100%;
+  height: 380px;
+  margin: auto;
+}
+
+/* .doughnut_container canvas{
+	width: 50%;
+} */
+
+.information_section{
+	/* width: 200px; */
+  /* margin-top: 1.5rem; */
+}
+
+.information_container{
+	width: fit-content;
+}
+
+.information_container span{
+  font-size: .7rem;
+}
+
+.color_age {
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+}
+
+.color_age_blue {
+  background-color: #3aa2dd;
+}
+.color_age_red {
+  background-color: #f05153;
+}
+.color_age_yellow {
+  background-color: #ffb800;
+}

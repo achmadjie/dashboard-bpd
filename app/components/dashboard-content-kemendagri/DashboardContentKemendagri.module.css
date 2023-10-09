@@ -1,0 +1,129 @@
+.dashboard_section {
+  padding: 0;
+  /* height: 50vh; */
+}
+
+/* .dashboard_main_container {
+  height: 100vh;
+} */
+
+.dashboard_title_active_linmas_container{
+  height: fit-content;
+}
+
+.dashboard_title h1 {
+  font-weight: bolder;
+}
+
+.dashboard_title p {
+  color: #979ca5;
+  font-size: 0.8rem;
+}
+
+.board_container {
+  color: #ffffff;
+}
+
+.active_board_container {
+  border-radius: 1.25rem;
+  background: linear-gradient(115deg, #5685ff -15.9%, #66ffd5 105.21%);
+  padding: 1.5rem;
+  width: 22vw;
+  height: auto;
+  /* gap: 3.5rem; */
+}
+
+.active_board_container span {
+  text-align: end;
+  font-size: 3.8rem;
+  /* font-weight: 500; */
+}
+
+.linmas_active_number{
+  font-weight: bold;
+}
+
+.user_icon {
+  font-size: 3rem;
+}
+
+.active_limas_with_icon span {
+  font-size: 1.5rem;
+  width: 13vw;
+}
+
+.board_input_container {
+  /* gap: 3rem; */
+}
+
+.village_list_container,
+.statistics_container {
+  border-radius: 1.25rem;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.3rem;
+  font-weight: normal;
+  padding: 15px 30px;
+}
+
+.village_list_container {
+  background: #7ac6ff;
+  /* gap: 55px; */
+  border: none;
+  color: #fff;
+}
+
+.statistics_container {
+  background: linear-gradient(276deg, #63f6cd 0.88%, #5898f8 278.44%);
+  border: none;
+  color: #fff;
+  padding: 15px 35px;
+}
+
+.village_list_icon, .statistics_icon{
+  font-size: 2.5rem;
+}
+
+.linmas_maps_section
+
+.linmas_maps_section h2{
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  text-align: start;
+}
+
+.search_bar {
+  width: 55vw;
+  height: 5vh;
+  border: 1px solid #eaf0f7;
+  border-radius: 15px;
+  padding: 0 15px;
+  color: #667085;
+  font-size: 0.8rem;
+  background-color: #EAF0F7;
+}
+
+.search_bar_icon {
+  font-size: 1rem;
+  color: #667085;
+}
+
+.filter_bar {
+  width: 17vw;
+  height: 5vh;
+  border: 1px solid #eaf0f7;
+  border-radius: 15px;
+  padding: 0 15px;
+  color: #667085;
+  font-size: 0.8rem;
+  background-color: #EAF0F7;
+}
+
+.filter_bar_icon {
+  font-size: 1.7rem;
+  color: #292D32;
+}
