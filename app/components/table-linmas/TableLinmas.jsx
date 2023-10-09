@@ -1,10 +1,14 @@
 import React from "react";
-import { FiDownload, FiSearch, FiEdit } from "react-icons/fi";
-import { IoAddSharp } from "react-icons/io5";
+import { FiDownload, FiSearch } from "react-icons/fi";
+
 import { MdArrowDropDown } from "react-icons/md";
 import { Poppins } from "next/font/google";
+import ActiveLinmas from "../activate-linmas/ActivateLinmas";
 
 import styles from "./TableLinmas.module.css";
+import AddLinmasModal from "../add-linmas-modal/AddLinmasModal";
+import NonActiveLinmas from "../non-activate-linmas/NonActivateLinmas";
+import EditLinmasModal from "../edit-linmas-modal/EditLinmasModal";
 
 const pops = Poppins({
   subsets: ["latin"],
@@ -32,7 +36,7 @@ const tableData = [
     numKTA: 58159321,
     numRTRW: "001/005",
     status: "Aktif",
-    action: FiEdit,
+    action: EditLinmasModal,
   },
   {
     id: 1,
@@ -43,7 +47,7 @@ const tableData = [
     numKTA: 58159321,
     numRTRW: "001/005",
     status: "Aktif",
-    action: FiEdit,
+    action: EditLinmasModal,
   },
   {
     id: 2,
@@ -54,7 +58,7 @@ const tableData = [
     numKTA: 58159321,
     numRTRW: "001/005",
     status: "Aktif",
-    action: FiEdit,
+    action: EditLinmasModal,
   },
   {
     id: 3,
@@ -65,7 +69,7 @@ const tableData = [
     numKTA: 58159321,
     numRTRW: "001/005",
     status: "Non-Aktif",
-    action: FiEdit,
+    action: EditLinmasModal,
   },
   {
     id: 4,
@@ -76,7 +80,7 @@ const tableData = [
     numKTA: 58159321,
     numRTRW: "001/005",
     status: "Non-Aktif",
-    action: FiEdit,
+    action: EditLinmasModal,
   },
   {
     id: 5,
@@ -87,7 +91,7 @@ const tableData = [
     numKTA: 58159321,
     numRTRW: "001/005",
     status: "Non-Aktif",
-    action: FiEdit,
+    action: EditLinmasModal,
   },
   {
     id: 6,
@@ -98,29 +102,40 @@ const tableData = [
     numKTA: 58159321,
     numRTRW: "001/005",
     status: "Aktif",
-    action: FiEdit,
+    action: EditLinmasModal,
   },
   {
-    id: 8,
-    no: 9,
+    id: 7,
+    no: 8,
     name: "Dony Prastiya",
     gender: "L",
     age: "25 Tahun",
     numKTA: 58159321,
     numRTRW: "001/005",
     status: "Aktif",
-    action: FiEdit,
+    action: EditLinmasModal,
   },
   {
-    id: 9,
-    no: 10,
+    id: 8,
+    no: 9,
     name: "Ahsan Mubariz",
     gender: "L",
     age: "25 Tahun",
     numKTA: 58159321,
     numRTRW: "001/005",
     status: "Aktif",
-    action: FiEdit,
+    action: EditLinmasModal,
+  },
+  {
+    id: 9,
+    no: 10,
+    name: "Syifa Tri Gardini",
+    gender: "P",
+    age: "25 Tahun",
+    numKTA: 58159321,
+    numRTRW: "001/005",
+    status: "Non-Aktif",
+    action: EditLinmasModal,
   },
   {
     id: 10,
@@ -131,7 +146,7 @@ const tableData = [
     numKTA: 58159321,
     numRTRW: "001/005",
     status: "Non-Aktif",
-    action: FiEdit,
+    action: EditLinmasModal,
   },
   {
     id: 11,
@@ -142,18 +157,7 @@ const tableData = [
     numKTA: 58159321,
     numRTRW: "001/005",
     status: "Non-Aktif",
-    action: FiEdit,
-  },
-  {
-    id: 12,
-    no: 13,
-    name: "Syifa Tri Gardini",
-    gender: "P",
-    age: "25 Tahun",
-    numKTA: 58159321,
-    numRTRW: "001/005",
-    status: "Non-Aktif",
-    action: FiEdit,
+    action: EditLinmasModal,
   },
 ];
 
@@ -190,10 +194,7 @@ function TableLinmas() {
                 Export
                 <FiDownload className={`${styles.button_icon}`} />
               </button>
-              <button className={`${styles.add_button}`}>
-                Tambah
-                <IoAddSharp className={`${styles.button_icon}`} />
-              </button>
+              <AddLinmasModal />
             </div>
           </div>
         </div>
@@ -225,14 +226,13 @@ function TableLinmas() {
                 return (
                   <>
                     <th
-                      className={`${styles.table_header} text-center`}
+                      className={`${styles.table_header} ${
+                        item === "No." ? `${styles.table_title}` : "text-center"
+                      }`}
                       key={item}
                     >
                       {item}
                     </th>
-                    {/* {item === "Nama Linmas" && (
-                    <th className={`${styles.table_header} text-left`}>{item}</th>
-                   )} */}
                   </>
                 );
               })}
@@ -242,51 +242,60 @@ function TableLinmas() {
             {tableData.map((data) => {
               return (
                 <>
-                  <tr className={`${styles.data_table}`} key={data.id}>
-                    <td className={`${styles.table_data_number}`} key={data.id}>
-                      {data.no}
-                    </td>
-                    <td
-                      className={`${styles.table_data_name} text-start`}
-                      key={data.id}
-                    >
-                      {data.name}
-                    </td>
-                    <td className={`${styles.table_data_gender}`} key={data.id}>
-                      {data.gender}
-                    </td>
-                    <td className={`${styles.table_data_age}`} key={data.id}>
-                      {data.age}
-                    </td>
-                    <td className={`${styles.table_data_numKTA}`} key={data.id}>
-                      {data.numKTA}
-                    </td>
-                    <td
-                      className={`${styles.table_data_numRTRW}`}
-                      key={data.id}
-                    >
-                      {data.numRTRW}
-                    </td>
-                    {data.status === "Aktif" && (
+                  <div
+                    className={`${
+                      data.no % 2 == 0 ? styles.table_blue_column : ``
+                    }`}
+                  >
+                    <tr className={`${styles.data_table} }`} key={data.id}>
+                      <td
+                        className={`${styles.table_data_number}`}
+                        key={data.id}
+                      >
+                        {data.no}
+                      </td>
+                      <td
+                        className={`${styles.table_data_name} text-start`}
+                        key={data.id}
+                      >
+                        {data.name}
+                      </td>
+                      <td
+                        className={`${styles.table_data_gender}`}
+                        key={data.id}
+                      >
+                        {data.gender}
+                      </td>
+                      <td className={`${styles.table_data_age}`} key={data.id}>
+                        {data.age}
+                      </td>
+                      <td
+                        className={`${styles.table_data_numKTA}`}
+                        key={data.id}
+                      >
+                        {data.numKTA}
+                      </td>
+                      <td
+                        className={`${styles.table_data_numRTRW}`}
+                        key={data.id}
+                      >
+                        {data.numRTRW}
+                      </td>
                       <td
                         key={data.id}
-                        className={`${styles.active_linmas} ${styles.table_data_status}`}
+                        className={`${styles.table_data_status}`}
                       >
-                        {data.status}
+                        {data.status === "Aktif" ? (
+                          <ActiveLinmas />
+                        ) : (
+                          <NonActiveLinmas />
+                        )}
                       </td>
-                    )}
-                    {data.status === "Non-Aktif" && (
-                      <td
-                        key={data.id}
-                        className={`${styles.non_active_linmas} ${styles.table_data_status}`}
-                      >
-                        {data.status}
+                      <td key={data.id} className={`${styles.table_data_action}`}>
+                        <data.action key={data.id} />
                       </td>
-                    )}
-                    <td className={`${styles.table_data_action}`}>
-                      <data.action key={data.id} />
-                    </td>
-                  </tr>
+                    </tr>
+                  </div>
                 </>
               );
             })}

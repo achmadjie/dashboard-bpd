@@ -161,14 +161,17 @@ function TableLaporan() {
                 return (
                   <>
                     <th
-                      className={`${styles.table_header} text-center`}
+                      className={`${styles.table_header} ${
+                        item === "Nama Linmas" ||
+                        item === "Judul Laporan" ||
+                        item === "Jenis"
+                          ? `text-start`
+                          : `text-center`
+                      } `}
                       key={item}
                     >
                       {item}
                     </th>
-                    {/* {item === "Nama Linmas" && (
-                    <th className={`${styles.table_header} text-left`}>{item}</th>
-                   )} */}
                   </>
                 );
               })}
@@ -194,7 +197,10 @@ function TableLaporan() {
                     >
                       {data.name}
                     </td>
-                    <td className={`${styles.table_data_type}`} key={data.id}>
+                    <td
+                      className={`${styles.table_data_type} text-start`}
+                      key={data.id}
+                    >
                       {data.type}
                     </td>
                     <td className={`${styles.table_data_date}`} key={data.id}>

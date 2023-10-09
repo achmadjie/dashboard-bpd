@@ -1,5 +1,6 @@
-.table_linmas_container{
+.table_linmas_container {
   padding: 0;
+  height: fit-content;
 }
 
 .title_container h1 {
@@ -60,6 +61,7 @@
   padding: 0 15px;
   color: #667085;
   font-size: 0.8rem;
+  background-color: #EAF0F7;
 }
 
 .search_bar_icon {
@@ -75,6 +77,7 @@
   padding: 0 15px;
   color: #667085;
   font-size: 0.8rem;
+  background-color: #EAF0F7;
 }
 
 .sort_bar_icon {
@@ -82,20 +85,25 @@
   color: #667085;
 }
 
-.table_line{
-	margin: 10px 0;
-	color: #979CA5;
-	border-top: 1px solid;
-	opacity: 1;
-  }
+.table_line {
+  margin: 10px 0;
+  color: #979ca5;
+  border-top: 1px solid;
+  opacity: 1;
+}
 
 .table_body,
 .table_header {
   text-align: center;
   /* border: 1px solid black; */
   width: 100vw;
+  height: fit-content;
   border-collapse: separate;
   border-spacing: 1rem;
+}
+
+.table_title{
+  width: 7%;
 }
 
 .data_table td {
@@ -109,6 +117,10 @@
 .table_header {
   color: #94918a;
   font-weight: lighter;
+}
+
+.table_blue_column {
+  background-color: #E2F2FF;
 }
 
 .table_data_number {
@@ -158,6 +170,7 @@
 .active_linmas {
   background-color: #d8f6e8;
   border-radius: 15px;
+  /* text-align: center; */
 }
 
 .non_active_linmas {

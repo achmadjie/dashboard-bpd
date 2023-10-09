@@ -60,11 +60,13 @@
   padding: 0 15px;
   color: #667085;
   font-size: 0.8rem;
+  background: #EAF0F7;
 }
 
 .search_bar_icon {
   font-size: 1rem;
   color: #667085;
+
 }
 
 .sort_bar,
@@ -76,6 +78,7 @@
   padding: 0 15px;
   color: #667085;
   font-size: 0.8rem;
+  background: #EAF0F7;
 }
 
 .sort_bar_icon,
@@ -97,7 +100,7 @@
   /* border: 1px solid black; */
   width: 100vw;
   border-collapse: separate;
-  border-spacing: 1rem;
+  border-spacing: 1.5rem;
 }
 
 .data_table td {
@@ -105,7 +108,7 @@
   border: 1px solid black; */
   /* width: 10px; */
   border-collapse: separate;
-  border-spacing: 1rem;
+  border-spacing: 1.5rem;
 }
 
 .table_header {
@@ -119,13 +122,13 @@
 }
 
 .table_data_report_title {
-  width: 15%;
-  font-size: .8rem;
+  width: 10%;
+  font-size: .9rem;
 }
 
 .table_data_name {
   width: 10%;
-  font-size: .8rem;
+  font-size: 1rem;
 }
 
 .table_data_type {

@@ -44,7 +44,12 @@
   border-spacing: 1rem;
 }
 
-.data_table td {
+.table_data_background{
+  background-color: #E2F2FF;
+  /* height: fit-content; */
+}
+
+.data_table {
   text-align: center;
   /* border: 1px solid black; */
   /* width: 10px; */
