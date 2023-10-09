@@ -1,16 +1,15 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import Image from "next/image";
-import delete_icon from "../../assets/icons/X-Icon.svg";
+import { TiDeleteOutline } from "react-icons/ti";
+import { BsEyeSlash, BsEye } from "react-icons/bs";
 import eyes_icon from "../../assets/icons/eyes-Icon.svg";
 import Link from "next/link";
 import { Poppins, Inter } from "next/font/google";
 
 import styles from "./LoginForm.module.css";
-
-
 
 const pops = Poppins({
   subsets: ["latin"],
@@ -23,6 +22,21 @@ const inter = Inter({
 });
 
 function LoginForm() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleClick = () => {
+    setIsOpen(!isOpen);
+  };
+
+  useEffect(() => {}, []);
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleClear = () => {
+    setEmail("");
+    setPassword("");
+  };
 
   const {
     register,
@@ -31,6 +45,7 @@ function LoginForm() {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => console.log(data);
+
   return (
     <div
       className={`${styles.login_container} d-flex justify-content-center container-fluid ${pops.className}`}
@@ -45,36 +60,56 @@ function LoginForm() {
             placeholder="Masukkan Email"
             type="email"
             {...register("Email")}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
           <div className={`${styles.delete_icon_container} d-inline-block`}>
-            <Image
+            <TiDeleteOutline
               className={`${styles.delete_icon}`}
-              src={delete_icon}
-              alt="delete-icon"
+              onClick={handleClear}
             />
           </div>
         </div>
         <div className={`${styles.password_container}`}>
           <input
             className={`${styles.password_box} ${inter.className}`}
-            type="password"
+            type={isOpen ? "text" : "password"}
             {...register("Password", { required: true })}
             placeholder="........"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
-          <div className={`${styles.eyes_icon_container} d-inline-block`}>
-            <Image
-              className={`${styles.eyes_icon}`}
-              src={eyes_icon}
-              alt="eyes-icon"
-            />
+          <div
+            className={`${styles.eyes_icon_container} d-inline-block`}
+            onClick={handleClick}
+          >
+            {isOpen ? (
+              <BsEye
+                className={`${styles.eyes_icon}`}
+                src={eyes_icon}
+                alt="eyes-icon"
+              ></BsEye>
+            ) : (
+              <BsEyeSlash
+                className={`${styles.eyes_icon}`}
+                src={eyes_icon}
+                alt="eyes-icon"
+              ></BsEyeSlash>
+            )}
           </div>
         </div>
         {/* {errors.Password && <span>This field is required</span>} */}
         <Link href="#" className={`${styles.forget_password_text}`}>
           Lupa Kata Sandi ?
         </Link>
-        <div className={`${styles.submit_container} d-flex container-fluid justify-content-center`}>
-          <input className={`${styles.submit_button}`} type="submit" value="Masuk"/>
+        <div
+          className={`${styles.submit_container} d-flex container-fluid justify-content-center`}
+        >
+          <input
+            className={`${styles.submit_button}`}
+            type="submit"
+            value="Masuk"
+          />
         </div>
       </form>
     </div>

@@ -45,6 +45,8 @@
   right: 7%;
   width: 1.15rem;
   height: auto;
+  color: #667085;
+  opacity: .7;
 }
 
 .forget_password_text {
