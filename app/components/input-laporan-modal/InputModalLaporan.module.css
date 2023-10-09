@@ -1,0 +1,72 @@
+.laporan_input_btn {
+  border-radius: 1.25rem;
+  width: 25vw;
+  height: 13vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  gap: 55px;
+  background: linear-gradient(276deg, #63f6cd 0.88%, #5898f8 278.44%);
+  border: none;
+  color: #fff;
+}
+
+.add_icon {
+  font-size: 3rem;
+  color: #ffffff;
+}
+
+.modal_header {
+  padding: 20px;
+}
+
+.modal_body {
+  height: 50vh;
+  overflow: scroll;
+  padding: 0 20px 20px;
+}
+
+.modal_body::-webkit-scrollbar {
+  display: none;
+}
+
+.input_laporan_form {
+  background: #eaf0f7;
+  border: none;
+  padding: 10px 0 10px 20px;
+  border-radius: 10px;
+}
+
+.select_linmas_pelapor {
+  background: #eaf0f7;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  width: 12vw;
+  /* width: 100%; */
+}
+
+.input_cancel_btn{
+  margin: 20px;
+}
+
+.input_cancel_btn button,
+.input_cancel_btn input {
+  background-color: transparent;
+  border: 1px solid #4461f2;
+  padding: 10px 30px;
+  color: #4461f2;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  box-shadow: 0px 12px 21px 4px #4461F226;
+}
+
+.input_cancel_btn input {
+  padding: 10px 40px;
+  background-color: #4461F2;
+  color: #FFFFFF;
+  margin-left: 20px;
+}
