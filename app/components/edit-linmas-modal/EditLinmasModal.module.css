@@ -1,0 +1,99 @@
+.edit_input_btn {
+background: transparent;
+  border: none;
+
+}
+
+.edit_icon {
+  font-size: 1.5rem;
+  color: black;
+}
+
+.modal_header {
+  padding: 20px;
+}
+
+.modal_body {
+  height: 50vh;
+  overflow: scroll;
+  padding: 0 20px 20px;
+}
+
+.modal_body::-webkit-scrollbar {
+  display: none;
+}
+
+.individu_btn,
+.batch_sk_btn {
+  background-color: transparent;
+  border: 1px solid #4461f2;
+  padding: 7px 18px;
+  color: #4461f2;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.active {
+  background-color: #4461f2;
+  color: #fff;
+}
+
+.show_input {
+  display: flex;
+}
+
+.hide_input {
+  display: none;
+}
+
+.input_linmas_form {
+  background: #eaf0f7;
+  border: none;
+  padding: 10px 0 10px 20px;
+  border-radius: 10px;
+}
+
+.select_gender_container {
+  gap: 3.5rem;
+}
+
+.select_gender {
+  background: #eaf0f7;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  width: 12vw;
+  /* width: 100%; */
+}
+
+.input_cancel_btn{
+  margin: 20px;
+}
+
+.input_cancel_btn button,
+.input_cancel_btn input {
+  background-color: transparent;
+  border: 1px solid #4461f2;
+  padding: 10px 30px;
+  color: #4461f2;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  box-shadow: 0px 12px 21px 4px #4461F226;
+
+}
+
+.input_cancel_btn input {
+  padding: 10px 40px;
+  background-color: #4461F2;
+  color: #FFFFFF;
+  margin-left: 20px;
+}
+
+.add_linmas_container{
+  color: #4461F2;
+}
