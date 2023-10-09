@@ -51,8 +51,8 @@
   gap: 3rem;
 }
 
-.linmas_input_container,
-.report_input_container {
+.linmas_input_btn,
+.report_input_btn {
   border-radius: 1.25rem;
   width: 25vw;
   height: 13vh;
@@ -63,17 +63,22 @@
   font-size: 1.8rem;
 }
 
-.linmas_input_container {
+.linmas_input_btn {
   background: #7ac6ff;
   gap: 55px;
+  border: none;
+  color: #fff;
 }
 
-.report_input_container {
+.report_input_btn {
   background: linear-gradient(276deg, #63f6cd 0.88%, #5898f8 278.44%);
+  border: none;
+  color: #fff;
 }
 
 .add_icon {
   font-size: 3rem;
+  color: #FFFFFF;
 }
 
 .head_village_profile_container {
@@ -92,8 +97,9 @@
 }
 
 .profile_picture {
-  width: 150px;
   border-radius: 15.625rem;
+  width: auto;
+  height: auto;
 }
 
 /* .head_village_data_container {

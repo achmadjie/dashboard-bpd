@@ -1,14 +1,19 @@
 import React from "react";
+import dynamic from 'next/dynamic';
 import { FiUsers } from "react-icons/fi";
-import { VscDiffAdded } from "react-icons/vsc";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import Image from "next/image";
 import profile_pic from "../../assets/avatars/profile_picture.png";
 import { Poppins } from "next/font/google";
+// import InputLinmasModal from "../input-linmas-modal/InputLinmasModal";
+// import InputLaporanModal from "../input-laporan-modal/InputLaporanModal";
 // import vector_board_1 from "../../assets/vectors/Vector-2.svg"
 // import vector_board_2 from "../../assets/vectors/Vector-3.svg"
 
 import styles from "./DashboardContent.module.css";
+
+const InputLinmasModal = dynamic(() => import('../input-linmas-modal/InputLinmasModal'))
+const InputLaporanModal = dynamic(() => import('../input-laporan-modal/InputLaporanModal'))
 
 const pops = Poppins({
   subsets: ["latin"],
@@ -48,17 +53,11 @@ function DashboardContent() {
             <div
               className={`${styles.board_input_container} d-flex flex-column justify-content-center`}
             >
-              <div className={`${styles.linmas_input_container}`}>
-                <div className={`${styles.linmas_input_container}`}>
-                  <span>Input Linmas</span>
-                  <VscDiffAdded className={`${styles.add_icon}`}></VscDiffAdded>
-                </div>
+              <div className={`${styles.linmas_input_container_with_modals}`}>
+                <InputLinmasModal />
               </div>
-              <div className={`${styles.report_input_container}`}>
-                <div className={`${styles.report_input_container}`}>
-                  <span>Input Laporan</span>
-                  <VscDiffAdded className={`${styles.add_icon}`}></VscDiffAdded>
-                </div>
+              <div className={`${styles.report_input_container_with_modals}`}>
+                <InputLaporanModal />
               </div>
             </div>
           </div>
@@ -75,6 +74,8 @@ function DashboardContent() {
                 className={`${styles.profile_picture} img-fluid`}
                 src={profile_pic}
                 alt="head_village_photo"
+                // width={150}
+                priority={true}
               />
             </div>
           </div>
