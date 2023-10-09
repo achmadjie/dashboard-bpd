@@ -103,10 +103,11 @@
   padding-left: 10px;
   gap: 15px;
   user-select: none;
+  cursor: pointer;
 }
 
-.main_menu_item:hover{
-	color: #386BBC;
+.active {
+  color: #386BBC;
 }
 
 .menu_icon {
@@ -136,5 +137,6 @@
 }
 
 .peruri_logo{
-	width: 8.5rem;
+	/* width: 8.5rem; */
 }
+

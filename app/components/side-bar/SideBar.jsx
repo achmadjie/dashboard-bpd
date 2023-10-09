@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+// import dynamic from 'next/dynamic';
 import Image from "next/image";
 import Link from "next/link";
 import linmas_logo from "../../assets/logo/Linmas_Logo-1.svg";
@@ -10,12 +11,13 @@ import {
   MdDashboard,
 } from "react-icons/md";
 import { HiOutlineClipboardList } from "react-icons/hi";
-import { FiSettings } from "react-icons/fi";
+// import { FiSettings } from "react-icons/fi";
 import { PiSignOutLight } from "react-icons/pi";
 import { BsFolder2Open, BsBarChartLine } from "react-icons/bs";
 import { Poppins } from "next/font/google";
 import { Avatar } from "@mui/material";
 import peruri_logo from "../../assets/logo/powered-by-peruri.svg";
+import ChangePassword from "../change-password/ChangePassword";
 
 import styles from "./SideBar.module.css";
 
@@ -23,6 +25,8 @@ const pops = Poppins({
   subsets: ["latin"],
   weight: ["500", "800"],
 });
+
+// const ChangePassword = dynamic(() => import('../change-password/ChangePassword'))
 
 function SideBar() {
   const linmasMenu = [
@@ -41,13 +45,20 @@ function SideBar() {
     { icon: HiOutlineClipboardList, name: "List Linmas" },
     { icon: BsFolder2Open, name: "List Laporan" },
     { icon: BsBarChartLine, name: "Statistik Desa" },
-    { icon: FiSettings, name: "Ubah Password" },
+    { icon: ChangePassword, name: "" },
   ];
+  
 
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
     setIsOpen(!isOpen);
+  };
+
+  const [toggle, setToggle] = useState(0);
+
+  const updateToggle = (id) => {
+    setToggle(id);
   };
 
   return (
@@ -88,9 +99,9 @@ function SideBar() {
                 {isOpen && (
                   <ul>
                     <>
-                      {linmasMenu.map((menu) => {
+                      {linmasMenu.map((menu, idx) => {
                         return (
-                          <li key={menu} className={`${styles.menu_items}`}>
+                          <li key={idx} className={`${styles.menu_items}`}>
                             {menu}
                           </li>
                         );
@@ -119,16 +130,23 @@ function SideBar() {
           className={`${styles.main_menu_container} d-flex flex-column gap-5`}
         >
           <>
-            {mainMenu.map((menu) => {
+            {mainMenu.map((menu, idx) => {
               return (
-                <div
-                  key={menu}
-                  className={`${styles.main_menu_item} d-flex align-items-center`}
-                >
-                  <menu.icon className={`${styles.menu_icon}`} />
-                  <div className={`${styles.menu_name}`}>{menu.name}</div>
-                  {/* <menu.name /> */}
-                </div>
+                <>
+                  <div
+                    onClick={() => updateToggle(idx)}
+                    key={idx}
+                    className={`${
+                      styles.main_menu_item
+                    } d-flex align-items-center ${
+                      toggle === idx ? styles.active : ""
+                    }`}
+                  >
+                    <menu.icon className={`${styles.menu_icon}`} />
+                    <div className={`${styles.menu_name}`}>{menu.name}</div>
+                    {/* <menu.name /> */}
+                  </div>
+                </>
               );
             })}
           </>
@@ -138,7 +156,7 @@ function SideBar() {
         className={`${styles.signout_logo_container} d-flex flex-column justify-content-center gap-2`}
       >
         <Link
-          href="/login"
+          href="/login/Login"
           className={`${styles.signout_container} d-flex align-items-center gap-2`}
         >
           <PiSignOutLight className={`${styles.signout_icon}`}></PiSignOutLight>
