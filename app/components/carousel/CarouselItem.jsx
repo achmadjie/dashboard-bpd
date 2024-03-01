@@ -1,31 +1,25 @@
 "use client";
 
-// import Image from "next/image";
-// import profile_pic from "../../assets/avatars/profile_picture.png";
-// import avatar from "../../assets/avatars/avatar-image.svg";
-// import pic_1 from "../../assets/image/pexels-bayram-musayev-15625100.jpg";
-// import pic_2 from "../../assets/image/pexels-boys-in-bristol-photography-17967575.jpg";
-// import pic_3 from "../../assets/image/pexels-mathias-reding-17837373.jpg";
 import React from "react";
-import Slider from "react-slick";
-import ReactPlayer from "react-player/youtube";
-import { Poppins } from "next/font/google";
+import dynamic from "next/dynamic";
+import { pops } from "@/app/utils/font";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./CarouselItem.css";
+const Slider = dynamic(() => import("react-slick"), {
+  ssr: false,
+});
+const ReactPlayer = dynamic(() => import("react-player/youtube"), {
+  ssr: false,
+});
 import styles from "./CarouselItem.module.css";
 
-const InnerSlider = Slider.InnerSlider;
-
-
-const pops = Poppins({
-  subsets: ["latin"],
-  weight: ["400"],
-});
+const CustomArrow = ({ currentSlide, slideCount, children, ...props }) => {
+  return <div {...props}>{children}</div>;
+};
 
 function CarouselItem() {
-  
   const settings = {
     dots: true,
     infinite: true,
@@ -35,8 +29,16 @@ function CarouselItem() {
     autoplay: true,
     autoplaySpeed: 7000,
     cssEase: "linear",
-    nextArrow: <IoIosArrowForward />,
-    prevArrow: <IoIosArrowBack />,
+    nextArrow: (
+      <CustomArrow>
+        <IoIosArrowForward />
+      </CustomArrow>
+    ),
+    prevArrow: (
+      <CustomArrow>
+        <IoIosArrowBack />
+      </CustomArrow>
+    ),
   };
 
   // const slides = [
@@ -50,7 +52,7 @@ function CarouselItem() {
       className={`${styles.carousel_container} ${pops.className} container-fluid d-flex flex-column justify-content-center`}
     >
       <Slider {...settings}>
-      {/* <InnerSlider slides={slides} /> */}
+        {/* <InnerSlider slides={slides} /> */}
         <div
           className={`${styles.main_carousel_container} d-flex justify-content-center`}
         >

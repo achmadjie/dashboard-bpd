@@ -3,14 +3,9 @@
 import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import { useForm } from "react-hook-form";
-import { Poppins } from "next/font/google";
+import { pops } from "@/app/utils/font";
 
 import styles from "./NonActivateLinmas.module.css";
-
-const pops = Poppins({
-  weight: ["400", "600"],
-  subsets: ["latin"],
-});
 
 function NonActiveLinmas() {
   const [show, setShow] = useState(false);

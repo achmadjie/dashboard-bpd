@@ -2,16 +2,11 @@
 
 import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
-import {FiEdit} from "react-icons/fi"
+import { FiEdit } from "react-icons/fi";
 import { useForm } from "react-hook-form";
-import { Poppins } from "next/font/google";
+import { pops } from "@/app/utils/font";
 
 import styles from "./EditLinmasModal.module.css";
-
-const pops = Poppins({
-  weight: ["400"],
-  subsets: ["latin"],
-});
 
 function EditLinmasModal() {
   const [show, setShow] = useState(false);
@@ -35,7 +30,11 @@ function EditLinmasModal() {
       >
         <FiEdit className={`${styles.edit_icon}`}></FiEdit>
       </button>
-      <Modal show={show} onHide={handleClose} className={`${pops.className} ${styles.modal_container}`}>
+      <Modal
+        show={show}
+        onHide={handleClose}
+        className={`${pops.className} ${styles.modal_container}`}
+      >
         <div className={`${styles.modal_header}`}>
           <Modal.Header closeButton>
             <Modal.Title>Edit Linmas</Modal.Title>
@@ -136,7 +135,9 @@ function EditLinmasModal() {
                 />
               </div>
               <div className={`${styles.input_cancel_btn} ms-auto `}>
-                <button show={show} onHide={handleClose}>Cancel</button>
+                <button show={show} onHide={handleClose}>
+                  Cancel
+                </button>
                 <input type="submit" value="Input" />
               </div>
               {errors.exampleRequired && <span>This field is required</span>}

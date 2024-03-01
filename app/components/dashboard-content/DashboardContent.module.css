@@ -3,69 +3,81 @@
   /* height: 50vh; */
 }
 
-/* .dashboard_main_container {
-  height: 100vh;
-} */
+.dashboard_main_container {
+  height: fit-content;
+  gap: 3vw;
+}
 
 .dashboard_title_active_linmas_container{
   height: fit-content;
+  gap: 2vw;
 }
 
 .dashboard_title h1 {
-  font-weight: bolder;
+  font-size: 2.474vw;
+  font-weight: 600;
 }
 
 .dashboard_title p {
   color: #979ca5;
-  font-size: 0.8rem;
+  font-size: 0.833vw;
 }
 
 .board_container {
-  color: #ffffff;
+  color: #fff;
+  gap: 1.563vw;
 }
 
 .active_board_container {
-  border-radius: 1.25rem;
+  border-radius: 1.302vw;
   background: linear-gradient(115deg, #5685ff -15.9%, #66ffd5 105.21%);
-  padding: 1.5rem;
+  padding: 1.563vw;
   width: 27vw;
-  height: 35vh;
-  gap: 3.5rem;
+  height: fit-content;
+  gap: 2.3vw;
 }
 
 .active_board_container span {
   text-align: end;
-  font-size: 3.8rem;
+  font-size: 3.958vw;
+}
+
+.linmas_active_number_text{
+  font-weight: 500;
+}
+
+.linmas_active_number{
+  font-weight: 600;
 }
 
 .user_icon {
-  font-size: 3rem;
+  font-size: 3.125vw;
 }
 
 .active_limas_with_icon span {
-  font-size: 1.5rem;
+  font-size: 1.563vw;
   width: 13vw;
 }
 
 .board_input_container {
-  gap: 3rem;
+  gap: 3.125vw;
 }
 
 .linmas_input_btn,
 .report_input_btn {
-  border-radius: 1.25rem;
+  border-radius: 1.302vw;
   width: 25vw;
   height: 13vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;
-  font-size: 1.8rem;
+  gap: 2.604vw;
+  font-size: 1.875vw;
 }
 
 .linmas_input_btn {
   background: #7ac6ff;
-  gap: 55px;
+  gap: 3.581vw;
   border: none;
   color: #fff;
 }
@@ -77,27 +89,27 @@
 }
 
 .add_icon {
-  font-size: 3rem;
-  color: #FFFFFF;
+  font-size: 3.125vw;
+  color: #FFF;
 }
 
 .head_village_profile_container {
-  padding-top: 3rem;
+  padding-top: 3.125vw;
 }
 
 .head_village_title_profile_pic_container span {
   color: #979ca5;
-  font-size: 1.2rem;
+  font-size: 1.23vw;
 }
 
 .profile_picture_container {
-  padding: 0.5rem;
-  border-radius: 15.625rem;
+  padding: 0.521vw;
+  border-radius: 16.276vw;
   background: linear-gradient(134.1deg, #a5c8ff 2.33%, #cafff4 88.95%);
 }
 
 .profile_picture {
-  border-radius: 15.625rem;
+  border-radius: 16.276vw;
   width: auto;
   height: auto;
 }
@@ -106,22 +118,23 @@
 } */
 
 .head_village_name {
-  font-weight: bolder;
-  font-size: 1.3rem;
+  font-weight: 600;
+  font-size: 1.354vw;
 }
 
 .update_data_with_icon_container {
   color: #386bbc;
-  font-size: 0.8rem;
+  font-size: 0.833vw;
   font-weight: 600;
 }
 
 .arrow_right {
-  font-size: 1.5rem;
+  font-size: 1.563vw;
 }
 
 .rt_rw_container span{
-  font-size: .9rem;
+  font-size: 0.938vw;
+  font-weight: 600;
 }
 
 .rt_rw_line {

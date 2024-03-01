@@ -4,15 +4,10 @@ import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import { IoAddSharp } from "react-icons/io5";
 import { useForm } from "react-hook-form";
-import { Poppins } from "next/font/google";
+import { pops } from "@/app/utils/font";
 import {IoIosAdd} from "react-icons/io";
 
 import styles from "./AddLinmasModal.module.css";
-
-const pops = Poppins({
-  weight: ["400"],
-  subsets: ["latin"],
-});
 
 function AddLinmasModal() {
   const [show, setShow] = useState(false);

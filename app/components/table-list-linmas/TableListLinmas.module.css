@@ -1,4 +1,5 @@
 .tablelistlinmas_container{
+  width: 100%;
   height: fit-content;
 }
 
@@ -12,10 +13,12 @@
 .title_text {
   font-size: 1.5rem;
   color: #121212;
+  font-weight: 600;
 }
 
 .active_inactive_number_container span {
   font-size: 0.8rem;
+  font-weight: 600;
 }
 
 .active_text {
@@ -29,6 +32,7 @@
 .see_more_container {
   font-size: 1.1rem;
   color: #386bbc;
+  font-weight: 600;
 }
 
 .arrow_for_more {
@@ -39,10 +43,18 @@
 .table_header {
   text-align: center;
   /* border: 1px solid black; */
-  width: 100vw;
   border-collapse: separate;
   border-spacing: 1rem;
+  width: 100vw;
 }
+
+.table_header{
+  font-weight: 500;
+}
+
+/* .table_body{
+  width: 100%;
+} */
 
 .table_data_background{
   background-color: #E2F2FF;
@@ -51,10 +63,11 @@
 
 .data_table {
   text-align: center;
+  font-weight: 600;
   /* border: 1px solid black; */
   /* width: 10px; */
-  border-collapse: separate;
-  border-spacing: 1rem;
+  /* border-collapse: separate;
+  border-spacing: 1rem; */
 }
 
 .table_header {
@@ -63,42 +76,41 @@
 }
 
 .table_data_number {
-  width: 3%;
   font-size: 1.1rem;
 }
 
 .table_data_name {
-  width: 10%;
+  
   font-size: 1.1rem;
 }
 
 .table_data_gender {
-  width: 2%;
+
   font-size: 0.9rem;
 }
 
 .table_data_age {
-  width: 6%;
+  /* width: 10%; */
   font-size: 0.9rem;
 }
 
 .table_data_numKTA {
-  width: 5%;
+  width: 10%;
   font-size: 0.9rem;
 }
 
 .table_data_numRTRW {
-  width: 7%;
+  width: 10%;
   font-size: 0.9rem;
 }
 
 .table_data_status {
-  width: 5%;
+  width: 10%;
   font-size: 0.8rem;
 }
 
 .table_data_action {
-  width: 5%;
+  width: 10%;
   font-size: 1.4rem;
 }
 

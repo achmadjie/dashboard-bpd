@@ -4,25 +4,11 @@ import Image from "next/image";
 import { FiUsers, FiSearch } from "react-icons/fi";
 import { MdArrowDropDown } from "react-icons/md";
 import { TfiArrowCircleRight } from "react-icons/tfi";
-import { Poppins, Montserrat } from "next/font/google";
+import { pops, mons } from "@/app/utils/font";
 import LinmasMap from "../../assets/image/map-1.png";
-// import InputLinmasModal from "../input-linmas-modal/InputLinmasModal";
-// import InputLaporanModal from "../input-laporan-modal/InputLaporanModal";
-// import vector_board_1 from "../../assets/vectors/Vector-2.svg"
-// import vector_board_2 from "../../assets/vectors/Vector-3.svg"
-
-import styles from "./DashboardContentKemendagri.module.css";
 import DoughnutChartKemendagri from "../doughnut-chart-kemendagri/DoughnutChartKemendagri";
 
-const pops = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-});
-
-const monsFont = Montserrat({
-  subsets: ["latin"],
-  weight: ["600"],
-});
+import styles from "./DashboardContentKemendagri.module.css";
 
 function DashboardContentKemendagri() {
   return (
@@ -80,10 +66,15 @@ function DashboardContentKemendagri() {
           <DoughnutChartKemendagri />
         </div>
       </div>
-      <div className={`${styles.linmas_maps_section} d-flex flex-column justify-content-center align-items-center`}>
-        <h2 className={`${monsFont.className}`}>
-          Persebaran Linmas di Indonesia
-        </h2>
+      <div
+        className={`${styles.linmas_maps_section} d-flex flex-column justify-content-center align-items-center`}
+      >
+        <div className={`${styles.title_container}`}>
+          <h2 className={`${mons.className}`}>
+            Persebaran Linmas di Indonesia
+          </h2>
+        </div>
+
         <div
           className={`${styles.search_filter_bar_container} d-flex justify-content-between gap-3`}
         >

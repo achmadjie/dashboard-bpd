@@ -1,5 +1,6 @@
 .table_linmas_container {
   padding: 0;
+  width: 100%;
   height: fit-content;
 }
 
@@ -15,6 +16,7 @@
 .active_inactive_container {
   text-align: end;
   font-size: 0.8rem;
+  font-weight: 600;
 }
 
 .active_text {
@@ -112,6 +114,7 @@
   /* width: 10px; */
   border-collapse: separate;
   border-spacing: 1rem;
+  font-weight: 500;
 }
 
 .table_header {

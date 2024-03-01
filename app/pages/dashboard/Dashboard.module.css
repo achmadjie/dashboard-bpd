@@ -6,6 +6,8 @@
     rgba(25, 150, 254, 0.5) 127.78%
   );
   padding: 1.5rem 1.2rem 1.5rem 2rem;
+  width: 100vw;
+  height: 100vh;
 }
 
 .inner_container_content {
@@ -18,11 +20,13 @@
     drop-shadow(0px 59px 17px rgba(0, 19, 51, 0));
   border-radius: 1.5rem;
   /* padding: .5rem 35rem; */
+  width: 100vw;
+  height: 100vh;
 }
 
 .container_content {
   width: 100vw;
-  height: 93vh;
+  height: 100%;
   background-color: #F4F8FB;
   overflow-x: scroll;
   border-radius: 1.5rem;

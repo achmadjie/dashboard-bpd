@@ -4,15 +4,10 @@ import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import { VscDiffAdded } from "react-icons/vsc";
 import { useForm } from "react-hook-form";
-import { Poppins } from "next/font/google";
+import { pops } from "@/app/utils/font";
 import {IoIosAdd} from "react-icons/io";
 
 import styles from "./InputLinmasModal.module.css";
-
-const pops = Poppins({
-  weight: ["400"],
-  subsets: ["latin"],
-}); 
 
 function InputLinmasModal() {
   const [show, setShow] = useState(false);
@@ -37,7 +32,7 @@ function InputLinmasModal() {
   return (
     <>
       <button
-        className={`${styles.linmas_input_btn} ${pops.className}`}
+      className={`${styles.linmas_input_btn} ${pops.className}`}
         onClick={handleShow}
       >
         <span>Input Linmas</span>

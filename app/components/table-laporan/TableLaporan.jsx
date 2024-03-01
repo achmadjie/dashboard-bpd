@@ -2,14 +2,9 @@ import React from "react";
 import { FiDownload, FiSearch, FiEdit } from "react-icons/fi";
 import { IoAddSharp } from "react-icons/io5";
 import { MdArrowDropDown } from "react-icons/md";
-import { Poppins } from "next/font/google";
+import { pops } from "@/app/utils/font";
 
 import styles from "./TableLaporan.module.css";
-
-const pops = Poppins({
-  subsets: ["latin"],
-  weight: ["500"],
-});
 
 const tableHeader = [
   "No.",
@@ -106,14 +101,6 @@ function TableLaporan() {
           </div>
           <div className={`${styles.active_add_export_container} d-flex gap-3`}>
             <div
-              className={`${styles.active_inactive_container} d-flex flex-column`}
-            >
-              <span className={`${styles.active_text}`}>Aktif : 9.538</span>
-              <span className={`${styles.inactive_text}`}>
-                Non-Aktif : 2.602
-              </span>
-            </div>
-            <div
               className={`${styles.add_export_button_container} d-flex gap-3`}
             >
               <button className={`${styles.export_button}`}>
@@ -156,70 +143,46 @@ function TableLaporan() {
       >
         <tbody className={`${styles.table_body}`}>
           <tr className={``}>
-            <>
-              {tableHeader.map((item) => {
-                return (
-                  <>
-                    <th
-                      className={`${styles.table_header} ${
-                        item === "Nama Linmas" ||
-                        item === "Judul Laporan" ||
-                        item === "Jenis"
-                          ? `text-start`
-                          : `text-center`
-                      } `}
-                      key={item}
-                    >
-                      {item}
-                    </th>
-                  </>
-                );
-              })}
-            </>
-          </tr>
-          <>
-            {tableData.map((data) => {
+            {tableHeader.map((item) => {
               return (
-                <>
-                  <tr className={`${styles.data_table}`} key={data.id}>
-                    <td className={`${styles.table_data_number}`} key={data.id}>
-                      {data.no}
-                    </td>
-                    <td
-                      className={`${styles.table_data_report_title} text-start`}
-                      key={data.id}
-                    >
-                      {data.ReportTitle}
-                    </td>
-                    <td
-                      className={`${styles.table_data_name} text-start`}
-                      key={data.id}
-                    >
-                      {data.name}
-                    </td>
-                    <td
-                      className={`${styles.table_data_type} text-start`}
-                      key={data.id}
-                    >
-                      {data.type}
-                    </td>
-                    <td className={`${styles.table_data_date}`} key={data.id}>
-                      {data.date}
-                    </td>
-                    <td
-                      key={data.id}
-                      className={`${styles.table_data_attachment} container`}
-                    >
-                      {data.attachment}
-                    </td>
-                    <td className={`${styles.table_data_action}`}>
-                      <data.action key={data.id} />
-                    </td>
-                  </tr>
-                </>
+                <th
+                  className={`${styles.table_header} ${
+                    item === "Nama Linmas" ||
+                    item === "Judul Laporan" ||
+                    item === "Jenis"
+                      ? `text-start`
+                      : `text-center`
+                  } `}
+                  key={item}
+                >
+                  {item}
+                </th>
               );
             })}
-          </>
+          </tr>
+          {tableData.map((data) => {
+            return (
+              <tr className={`${styles.data_table}`} key={data.id}>
+                <td className={`${styles.table_data_number}`}>{data.no}</td>
+                <td className={`${styles.table_data_report_title} text-start`}>
+                  {data.ReportTitle}
+                </td>
+                <td className={`${styles.table_data_name} text-start`}>
+                  {data.name}
+                </td>
+                <td className={`${styles.table_data_type} text-start`}>
+                  {data.type}
+                </td>
+                <td className={`${styles.table_data_date}`}>{data.date}</td>
+                <td className={`${styles.table_data_attachment} container`}>
+                  {data.attachment}
+                </td>
+                <td className={`${styles.table_data_action}`}>
+                  <data.action />
+                </td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
     </div>

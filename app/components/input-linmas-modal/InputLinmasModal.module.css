@@ -1,30 +1,31 @@
 .linmas_input_btn {
-  border-radius: 1.25rem;
+  border-radius: 1.302vw;
   width: 25vw;
-  height: 13vh;
+  height: fit-content;
   display: flex;
-  justify-content: center;
+  /* justify-content: space-evenly; */
+  gap: 5.208vw;
   align-items: center;
-  font-size: 1.8rem;
+  font-size: 1.875vw;
   background: #7ac6ff;
-  gap: 55px;
   border: none;
   color: #fff;
+  padding: 1.771vw 2.083vw;
 }
 
 .add_icon {
-  font-size: 3rem;
-  color: #ffffff;
+  font-size: 3vw;
+  color: #fff;
 }
 
 .modal_header {
-  padding: 20px;
+  padding: 1.5vw;
 }
 
 .modal_body {
   height: 50vh;
   overflow: scroll;
-  padding: 0 20px 20px;
+  padding: 0 1.5vw 1.5vw;
 }
 
 .modal_body::-webkit-scrollbar {
@@ -35,13 +36,13 @@
 .batch_sk_btn {
   background-color: transparent;
   border: 1px solid #4461f2;
-  padding: 7px 18px;
+  padding: .7vw 1.5vw;
   color: #4461f2;
-  border-radius: 10px;
+  border-radius: .8vw;
   font-weight: 600;
-  font-size: 0.9rem;
-  letter-spacing: 1px;
-  margin-bottom: 15px;
+  font-size: .9vw;
+  letter-spacing: .05vw;
+  margin-bottom: 1.5vw;
 }
 
 .active {
@@ -60,46 +61,46 @@
 .input_linmas_form {
   background: #eaf0f7;
   border: none;
-  padding: 10px 0 10px 20px;
-  border-radius: 10px;
+  padding: 1vw 0 1vw 1.2vw;
+  border-radius: .8vw;
 }
 
 .select_gender_container {
-  gap: 3.5rem;
+  gap: 3.3vw;
 }
 
 .select_gender {
   background: #eaf0f7;
   border: none;
-  padding: 10px 20px;
-  border-radius: 10px;
+  padding: .7vw 1vw;
+  border-radius: .8vw;
   width: 12vw;
   /* width: 100%; */
 }
 
 .input_cancel_btn{
-  margin: 20px;
+  margin-top: 2vw;
 }
 
 .input_cancel_btn button,
 .input_cancel_btn input {
   background-color: transparent;
   border: 1px solid #4461f2;
-  padding: 10px 30px;
+  padding: .7vw 2vw;
   color: #4461f2;
-  border-radius: 10px;
+  border-radius: .8vw;
   font-weight: 600;
-  font-size: 0.9rem;
-  letter-spacing: 1px;
+  font-size: 1vw;
+  letter-spacing: .05vw;
   box-shadow: 0px 12px 21px 4px #4461F226;
 
 }
 
 .input_cancel_btn input {
-  padding: 10px 40px;
+  padding: .7vw 3vw;
   background-color: #4461F2;
-  color: #FFFFFF;
-  margin-left: 20px;
+  color: #FFf;
+  margin-left: 1.3vw;
 }
 
 .add_linmas_container{

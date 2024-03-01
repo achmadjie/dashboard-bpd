@@ -1,29 +1,29 @@
 .sidebar_container {
   width: 22vw;
-  height: 93.5vh;
+  height: auto;
   /* gap: 10.2rem; */
   z-index: 1;
 }
 
-.logo_menu_container{
-	width: fit-content;
+.logo_menu_container {
+  width: fit-content;
 }
 
-.logo_welcome_container{
-	width: fit-content;
+.logo_welcome_container {
+  width: fit-content;
 }
 
 .logo {
-  width: 3.5rem;
+  width: 3.646vw;
 }
 
 .linmas_title {
-  font-weight: bolder;
-  font-size: 1.3rem;
+  font-size: 1.354vw;
+  font-weight: 800;
 }
 
 .arrow_icon {
-  font-size: 1.5rem;
+  font-size: 1.563vw;
   /* margin-bottom: 2px; */
 }
 
@@ -40,25 +40,30 @@
 .dropdown_containter {
   top: 35px;
   left: 105px;
+  box-shadow: 0px 0px 20px -3px rgba(0, 0, 0, 0.72);
+  -webkit-box-shadow: 0px 0px 20px -3px rgba(0, 0, 0, 0.72);
+  -moz-box-shadow: 0px 0px 20px -3px rgba(0, 0, 0, 0.72);
+  border-radius: 15px;
 }
 
 .dropdown_containter ul {
   /* width: 50%; */
   /* display: none; */
-  background-color: #e2f2ff;
+  background-color: #F4F8FB;
   color: #121212;
+  padding: 10px 7px;
   border-radius: 15px;
-  padding: 10px 3px;
-  border: 1px solid #121212;
+  /* border: 1px solid #121212; */
 }
 
 .dropdown_containter li {
   padding: 3px 0 3px 10px;
   /* margin: 10px; */
-  width: 120px;
+  width: 7.8125vw;
   /* margin-bottom: 5px; */
   border-radius: 7px;
-  font-size: 0.7rem;
+  font-size: 0.729vw;
+  font-weight: 600;
   /* border-bottom: .2px solid; */
 }
 
@@ -67,14 +72,14 @@
   background-color: #a5c8ff;
   border-radius: 7px;
   /* font-weight: bold; */
-  transition: .5s;
+  transition: 0.5s;
   color: #121212;
   /* padding: ; */
 }
 
 .welcome_avatar_container {
   width: fit-content;
-  gap: 15px;
+  gap: 14px;
 }
 
 /* .avatar_container {
@@ -82,21 +87,23 @@
 } */
 
 .avatar_image {
-  width: 2.8rem;
-  height: 2.8rem;
+  width: 2.917vw;
+  height: 2.917vw;
 }
 
 .welcome_text {
-  font-size: .7rem;
+  font-size: 0.729vw;
+  font-weight: 500;
 }
 
 .village_text {
-  font-size: 1.2rem;
-  font-weight: bold;
+  font-size: 1.25vw;
+  font-weight: 700;
 }
 
 .main_menu_container {
   width: fit-content;
+  font-weight: 600;
 }
 
 .main_menu_item {
@@ -107,36 +114,36 @@
 }
 
 .active {
-  color: #386BBC;
+  color: #386bbc;
 }
 
 .menu_icon {
-  font-size: 1.5rem;
+  font-size: 1.563vw;
 }
 
 .menu_name {
-  font-size: .9rem;
+  font-size: 0.938vw;
   display: flex;
 }
 
-.signout_logo_container{
-	width: fit-content;
-	/* padding-left: 12px; */
+.signout_logo_container {
+  width: fit-content;
+  /* padding-left: 12px; */
 }
 
-.signout_container{
-	width: fit-content;
+.signout_container {
+  width: fit-content;
 }
 
-.signout_icon{
-	font-size: 1.8rem;
+.signout_icon {
+  font-size: 1.875vw;
 }
 
-.signout_text{
-	font-size: 1rem;
+.signout_text {
+  font-size: 1.042vw;
+  font-weight: 600;
 }
 
-.peruri_logo{
-	/* width: 8.5rem; */
-}
-
+/* .peruri_logo {
+  width: 8.5rem;
+} */

@@ -12,7 +12,7 @@
 }
 
 .dashboard_title h1 {
-  font-weight: bolder;
+  font-weight: 600;
 }
 
 .dashboard_title p {
@@ -40,7 +40,7 @@
 }
 
 .linmas_active_number{
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .user_icon {
@@ -90,10 +90,15 @@
 
 .linmas_maps_section
 
+.title_container{
+  width: 100%;
+}
+
 .linmas_maps_section h2{
   font-size: 1.2rem;
   margin-bottom: 30px;
   text-align: start;
+  font-weight: 600;
 }
 
 .search_bar {

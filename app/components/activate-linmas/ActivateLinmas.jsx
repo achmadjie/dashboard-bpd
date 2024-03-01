@@ -3,14 +3,9 @@
 import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import { useForm } from "react-hook-form";
-import { Poppins } from "next/font/google";
+import { pops } from "@/app/utils/font";
 
 import styles from "./ActivateLinmas.module.css";
-
-const pops = Poppins({
-  weight: ["400", "600"],
-  subsets: ["latin"],
-});
 
 function ActiveLinmas() {
   const [show, setShow] = useState(false);
@@ -71,11 +66,9 @@ function ActiveLinmas() {
                   className={`${styles.select_linmas_pelapor}`}
                   {...register("reason_stop")}
                 >
-                  <>
-                    {reportLinmasName.map((linmasName) => {
-                      return <option key={linmasName}>{linmasName}</option>;
-                    })}
-                  </>
+                  {reportLinmasName.map((linmasName) => {
+                    return <option key={linmasName}>{linmasName}</option>;
+                  })}
                 </select>
               </div>
               <div className={`${styles.input_cancel_btn} ms-auto`}>

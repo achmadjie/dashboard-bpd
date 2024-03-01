@@ -1,9 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { Bar } from "react-chartjs-2";
-import { Data } from "../../utils/Data";
-import { Montserrat } from "next/font/google";
+// import { mons } from "@/app/utils/font";
 import styles from "./BarChart.module.css";
 
 import {
@@ -91,7 +90,6 @@ function BarChart() {
         }}
         options={options1}
       />
-
       <Bar
         data={{
           labels: ["N/A", "SD", "SMP", "SMA", "S1"],

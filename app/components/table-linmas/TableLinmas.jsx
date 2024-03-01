@@ -1,19 +1,23 @@
 import React from "react";
 import { FiDownload, FiSearch } from "react-icons/fi";
-
 import { MdArrowDropDown } from "react-icons/md";
-import { Poppins } from "next/font/google";
+import { pops } from "@/app/utils/font";
 import ActiveLinmas from "../activate-linmas/ActivateLinmas";
+import dynamic from "next/dynamic";
+// import AddLinmasModal from "../add-linmas-modal/AddLinmasModal";
+// import NonActiveLinmas from "../non-activate-linmas/NonActivateLinmas";
+// import EditLinmasModal from "../edit-linmas-modal/EditLinmasModal";
+const AddLinmasModal = dynamic(() =>
+  import("../add-linmas-modal/AddLinmasModal")
+);
+const NonActiveLinmas = dynamic(() =>
+  import("../non-activate-linmas/NonActivateLinmas")
+);
+const EditLinmasModal = dynamic(() =>
+  import("../edit-linmas-modal/EditLinmasModal")
+);
 
 import styles from "./TableLinmas.module.css";
-import AddLinmasModal from "../add-linmas-modal/AddLinmasModal";
-import NonActiveLinmas from "../non-activate-linmas/NonActivateLinmas";
-import EditLinmasModal from "../edit-linmas-modal/EditLinmasModal";
-
-const pops = Poppins({
-  subsets: ["latin"],
-  weight: ["500"],
-});
 
 const tableHeader = [
   "No.",
@@ -221,85 +225,56 @@ function TableLinmas() {
       >
         <tbody className={`${styles.table_body}`}>
           <tr className={``}>
-            <>
-              {tableHeader.map((item) => {
-                return (
-                  <>
-                    <th
-                      className={`${styles.table_header} ${
-                        item === "No." ? `${styles.table_title}` : "text-center"
-                      }`}
-                      key={item}
-                    >
-                      {item}
-                    </th>
-                  </>
-                );
-              })}
-            </>
-          </tr>
-          <>
-            {tableData.map((data) => {
+            {tableHeader.map((item) => {
               return (
-                <>
-                  <div
-                    className={`${
-                      data.no % 2 == 0 ? styles.table_blue_column : ``
-                    }`}
-                  >
-                    <tr className={`${styles.data_table} }`} key={data.id}>
-                      <td
-                        className={`${styles.table_data_number}`}
-                        key={data.id}
-                      >
-                        {data.no}
-                      </td>
-                      <td
-                        className={`${styles.table_data_name} text-start`}
-                        key={data.id}
-                      >
-                        {data.name}
-                      </td>
-                      <td
-                        className={`${styles.table_data_gender}`}
-                        key={data.id}
-                      >
-                        {data.gender}
-                      </td>
-                      <td className={`${styles.table_data_age}`} key={data.id}>
-                        {data.age}
-                      </td>
-                      <td
-                        className={`${styles.table_data_numKTA}`}
-                        key={data.id}
-                      >
-                        {data.numKTA}
-                      </td>
-                      <td
-                        className={`${styles.table_data_numRTRW}`}
-                        key={data.id}
-                      >
-                        {data.numRTRW}
-                      </td>
-                      <td
-                        key={data.id}
-                        className={`${styles.table_data_status}`}
-                      >
-                        {data.status === "Aktif" ? (
-                          <ActiveLinmas />
-                        ) : (
-                          <NonActiveLinmas />
-                        )}
-                      </td>
-                      <td key={data.id} className={`${styles.table_data_action}`}>
-                        <data.action key={data.id} />
-                      </td>
-                    </tr>
-                  </div>
-                </>
+                <th
+                  className={`${styles.table_header} ${
+                    item === "No." ? `${styles.table_title}` : "text-center"
+                  }`}
+                  key={item}
+                >
+                  {item}
+                </th>
               );
             })}
-          </>
+          </tr>
+          {tableData.map((data) => {
+            return (
+              <div
+                key={data.id}
+                className={`${
+                  data.no % 2 == 0 ? styles.table_blue_column : ``
+                }`}
+              >
+                <tr className={`${styles.data_table} }`}>
+                  <td className={`${styles.table_data_number}`}>{data.no}</td>
+                  <td className={`${styles.table_data_name} text-start`}>
+                    {data.name}
+                  </td>
+                  <td className={`${styles.table_data_gender}`}>
+                    {data.gender}
+                  </td>
+                  <td className={`${styles.table_data_age}`}>{data.age}</td>
+                  <td className={`${styles.table_data_numKTA}`}>
+                    {data.numKTA}
+                  </td>
+                  <td className={`${styles.table_data_numRTRW}`}>
+                    {data.numRTRW}
+                  </td>
+                  <td className={`${styles.table_data_status}`}>
+                    {data.status === "Aktif" ? (
+                      <ActiveLinmas />
+                    ) : (
+                      <NonActiveLinmas />
+                    )}
+                  </td>
+                  <td className={`${styles.table_data_action}`}>
+                    <data.action />
+                  </td>
+                </tr>
+              </div>
+            );
+          })}
         </tbody>
       </table>
     </div>

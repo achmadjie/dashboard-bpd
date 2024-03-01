@@ -2,24 +2,13 @@
 
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import Image from "next/image";
 import { TiDeleteOutline } from "react-icons/ti";
 import { BsEyeSlash, BsEye } from "react-icons/bs";
 import eyes_icon from "../../assets/icons/eyes-Icon.svg";
 import Link from "next/link";
-import { Poppins, Inter } from "next/font/google";
+import { pops, inter } from "@/app/utils/font";
 
 import styles from "./LoginForm.module.css";
-
-const pops = Poppins({
-  subsets: ["latin"],
-  weight: ["500"],
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400"],
-});
 
 function LoginForm() {
   const [isOpen, setIsOpen] = useState(false);
@@ -72,7 +61,7 @@ function LoginForm() {
         </div>
         <div className={`${styles.password_container}`}>
           <input
-            className={`${styles.password_box} ${inter.className}`}
+            className={`${styles.password_box} ${inter}`}
             type={isOpen ? "text" : "password"}
             {...register("Password", { required: true })}
             placeholder="........"
@@ -86,14 +75,10 @@ function LoginForm() {
             {isOpen ? (
               <BsEye
                 className={`${styles.eyes_icon}`}
-                src={eyes_icon}
-                alt="eyes-icon"
               ></BsEye>
             ) : (
               <BsEyeSlash
                 className={`${styles.eyes_icon}`}
-                src={eyes_icon}
-                alt="eyes-icon"
               ></BsEyeSlash>
             )}
           </div>

@@ -3,16 +3,11 @@
 import React from "react";
 import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS, Tooltip, Legend, ArcElement } from "chart.js/auto";
-import { Montserrat } from "next/font/google";
+// import { mons } from "@/app/utils/font";
 
 import styles from "./DoughnutChart.module.css";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
-
-const montserratFont = Montserrat({
-  subsets: ["latin"],
-  weight: ["400"],
-});
 
 const data = {
   labels: ["Remaja", "Dewasa", "Lanjut Usia"],
@@ -47,13 +42,11 @@ function DoughnutChart() {
   return (
     <div className={`${styles.doughnut_container}`}>
       <Doughnut data={data} options={options} />
-      <div
-        className={`${styles.information_section} ${montserratFont.className} d-flex flex-column gap-3 justify-content-center mx-auto`}
+      {/* <div
+        className={`${styles.information_section} ${mons.className} d-flex flex-column gap-3 justify-content-center mx-auto`}
       >
-        <>
           {informationAge.map((item) => {
             return (
-              <>
                 <div
                   key={item.id}
                   className={`${styles.information_container} d-flex align-items-center gap-2`}
@@ -78,11 +71,9 @@ function DoughnutChart() {
                   ></div>
                   <span>{item.infoAge}</span>
                 </div>
-              </>
             );
           })}
-        </>
-      </div>
+      </div> */}
     </div>
   );
 }

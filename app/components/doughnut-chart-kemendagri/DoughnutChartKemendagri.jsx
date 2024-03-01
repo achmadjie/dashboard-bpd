@@ -3,16 +3,11 @@
 import React from "react";
 import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS, Tooltip, Legend, ArcElement } from "chart.js/auto";
-import { Montserrat } from "next/font/google";
+// import { mons } from "@/app/utils/font";
 
 import styles from "./DoughnutChartKemendagri.module.css";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
-
-const montserratFont = Montserrat({
-  subsets: ["latin"],
-  weight: ["400"],
-});
 
 const data = {
   labels: ["Remaja (12 - 17 Thn)", "Dewasa (17 - 63 Thn)", "Lanjut Usia ( > 63 Thn)"],

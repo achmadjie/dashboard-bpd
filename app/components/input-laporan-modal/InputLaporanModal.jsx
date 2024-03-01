@@ -4,14 +4,16 @@ import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import { VscDiffAdded } from "react-icons/vsc";
 import { useForm } from "react-hook-form";
-import { Poppins } from "next/font/google";
+import { pops } from "@/app/utils/font";
 
 import styles from "./InputModalLaporan.module.css";
 
-const pops = Poppins({
-  weight: ["400"],
-  subsets: ["latin"],
-});
+const reportLinmasName = [
+  "Hans Julio M.",
+  "Dony Prastiya",
+  "Syifa Tri Gardini",
+  "Ahsan Mubariz",
+];
 
 function InputLaporanModal() {
   const [show, setShow] = useState(false);
@@ -27,12 +29,6 @@ function InputLaporanModal() {
   } = useForm();
   const onSubmit = (data) => console.log(data);
 
-  const reportLinmasName = [
-    "Hans Julio M.",
-    "Dony Prastiya",
-    "Syifa Tri Gardini",
-    "Ahsan Mubariz",
-  ];
   return (
     <>
       <button
@@ -97,8 +93,8 @@ function InputLaporanModal() {
                   className={`${styles.input_laporan_form}`}
                   placeholder="Lorem ipsum dolor sit amet consectetur. Dolor condimentum morbi sit ornare suscipit nisi dignissim. Accumsan neque enim massa morbi tellus quis placerat viverra. Et magna dignissim habitasse sed magna orci tincidunt blandit scelerisque. Et laoreet hendrerit aliquam tincidunt. Nunc tristique lectus euismod facilisis. Tincidunt aliquam fermentum sed adipiscing eget quis est aenean aliquet.
 				  Lacus imperdiet nunc potenti enim. Aliquam facilisis amet tempus lacus aliquam dictum sit blandit. Scelerisque quisque augue platea nam dignissim mauris ac nisl id. Sapien interdum sagittis iaculis varius etiam in."
-				  rows={13.5}
-				  {...register("laporan_desc")}
+                  rows={13.5}
+                  {...register("laporan_desc")}
                 />
               </div>
               <div
