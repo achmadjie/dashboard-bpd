@@ -1,0 +1,22 @@
+.title_container{
+  margin-bottom: 10px;
+}
+
+.title_container h1{
+  font-weight: 600;
+}
+
+.title_container p{
+  font-weight: 300;
+  color: #979CA5;
+  font-size: .9rem;
+}
+
+/* .bar_chart_container {
+  padding: 30px 20px 40px 30px;
+}
+
+.doughnut_pie_container {
+  background-color: #ddeaf6;
+  padding: 30px 40px 30px 0;
+} */

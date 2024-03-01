@@ -1,0 +1,171 @@
+.table_linmas_container {
+  padding: 0;
+  width: 100%;
+  height: fit-content;
+}
+
+.title_container h1 {
+  font-weight: 600;
+}
+
+.title_container span {
+  font-size: 0.8rem;
+  color: #979ca5;
+}
+
+.active_inactive_container {
+  text-align: end;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.active_text {
+  color: #25cb9b;
+}
+
+.inactive_text {
+  color: #f05153;
+}
+
+.add_export_button_container button {
+  font-size: 0.9rem;
+  display: flex;
+  /* flex-direction:row; */
+  width: fit-content;
+  height: fit-content;
+  align-items: center;
+  gap: 1.5rem;
+  border: 1px solid #7ac6ff;
+  padding: 8px 13px;
+  border-radius: 10px;
+}
+
+.export_button {
+  background-color: transparent;
+  color: #7ac6ff;
+}
+
+.button_icon {
+  font-size: 1.2rem;
+}
+
+.search_bar {
+  width: 80vw;
+  height: 5vh;
+  border: 1px solid #eaf0f7;
+  border-radius: 15px;
+  padding: 0 15px;
+  color: #667085;
+  font-size: 0.8rem;
+  background-color: #EAF0F7;
+}
+
+.search_bar_icon {
+  font-size: 1rem;
+  color: #667085;
+}
+
+.sort_bar {
+  width: 17vw;
+  height: 5vh;
+  border: 1px solid #eaf0f7;
+  border-radius: 15px;
+  padding: 0 15px;
+  color: #667085;
+  font-size: 0.8rem;
+  background-color: #EAF0F7;
+}
+
+.sort_bar_icon {
+  font-size: 1.7rem;
+  color: #667085;
+}
+
+.table_line {
+  margin: 10px 0;
+  color: #979ca5;
+  border-top: 1px solid;
+  opacity: 1;
+}
+
+.table_body,
+.table_header {
+  text-align: center;
+  /* border: 1px solid black; */
+  width: 100vw;
+  height: fit-content;
+  border-collapse: separate;
+  border-spacing: 1rem;
+}
+
+.table_title{
+  /* width: 7%; */
+}
+
+.data_table td {
+  text-align: center;
+  /* border: 1px solid black; */
+  /* width: 10px; */
+  border-collapse: separate;
+  border-spacing: 1rem;
+  font-weight: 500;
+}
+
+.table_header {
+  color: #94918a;
+  font-weight: lighter;
+}
+
+.table_blue_column {
+  background-color: #E2F2FF;
+}
+
+.table_data_number {
+  /* width: 10%; */
+  font-size: 1.1rem;
+}
+
+.table_data_name {
+  /* width: 15%; */
+  font-size: 1.1rem;
+}
+
+.table_data_location {
+  /* width: 5%; */
+  font-size: 0.9rem;
+}
+
+.table_data_village {
+  /* width: 7%; */
+  font-size: 0.9rem;
+}
+
+.table_data_gender {
+  /* width: 2%; */
+  font-size: 0.9rem;
+}
+
+.table_data_age {
+  /* width: 6%; */
+  font-size: 0.9rem;
+}
+
+.table_data_status {
+  /* width: 5%; */
+  font-size: 0.8rem;
+}
+
+/* .table_data_number {
+  width: 5%;
+} */
+
+.active_linmas {
+  background-color: #d8f6e8;
+  border-radius: 15px;
+  /* text-align: center; */
+}
+
+.non_active_linmas {
+  background-color: #f6d8d8;
+  border-radius: 15px;
+}
